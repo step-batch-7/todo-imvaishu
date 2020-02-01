@@ -4,8 +4,8 @@
 
 
 --DONE--1)static page of TODO APP
-1.1)copy all required files from FC(server.js,app.js.....)
-1.2)Add server ,app class and handlers 
+--DONE--1.1)copy all required files from FC(server.js,app.js.....)
+--DONE--1.2)Add server ,app class and handlers 
 2)should show add note option on screen
 3)make Template for showing note
 4)should add note to json with title
