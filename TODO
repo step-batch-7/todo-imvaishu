@@ -1,10 +1,12 @@
 --files--
-index.html
-style.css
+--DONE--index.html
+--DONE--style.css
 
 
-1)static page of TODO APP
+--DONE--1)static page of TODO APP
+1.1)copy all required files from FC(server.js,app.js.....)
+1.2)Add server ,app class and handlers 
 2)should show add note option on screen
 3)make Template for showing note
 4)should add note to json with title
-5)should show note with title and date
+5)should show note with title and date.
