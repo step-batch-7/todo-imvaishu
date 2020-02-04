@@ -8,14 +8,14 @@
   <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="updatePage();">
   <h1 class="heading">TODO</h1>
   <div class="todo-page">
     <div class="todo">
       <input id="todo-title" type="text" placeholder="Create Your TODO here.....">
       <button id="create-button" onclick="showTitle()"> <i class="material-icons">create</i></button>
     </div>
-    <div id="addNewTodo"></div>
+    <div id="todo-items"></div>
   </div>
 </body>
 

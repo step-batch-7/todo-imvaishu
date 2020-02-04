@@ -1,13 +1,13 @@
 let todoList = [];
 
 const updateToHtml = function(todo){
-  return `<h3 id="addNewTodo">${todo.title}</h3>`;
+  return `<h3 id="todo">${todo.title}</h3>`;
 };
 
 const transferorTitle = function(){
-  const element = document.querySelector('#addNewTodo');
+  const element = document.querySelector('#todo-items');
   todoList = JSON.parse(todoList);
-  const html = todoList.map(updateToHtml).join('');
+  const html = todoList.slice().reverse().map(updateToHtml).join('');
   element.innerHTML = html;
 };
 
