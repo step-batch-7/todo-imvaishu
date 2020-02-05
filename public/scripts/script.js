@@ -1,6 +1,6 @@
-const transferorTitle = function(todoList){
-  const element = document.querySelector('#todo-items');
-  element.innerHTML = todoList.titleToHtml();
+const transferorTitle = function(id, html){
+  const element = document.querySelector(id);
+  element.innerHTML = html;
 };
 
 const updatePage = function(){
@@ -8,7 +8,7 @@ const updatePage = function(){
   req.onload = function(){
     if(this.status == 200){
       const todoList = TodoList.load(this.responseText);
-      transferorTitle(todoList);
+      transferorTitle('#todo-items', todoList.titleToHtml());
     }
   };
   req.open('GET', 'todoList');
@@ -28,11 +28,24 @@ const showTitle = function(){
       updatePage();
     }
   };
-  req.open('POST', 'todoTitle');
+  req.open('POST', 'todo');
   req.setRequestHeader('Content-Type', 'text/plain');
   req.send(titleText);
 };
 
+const loadTasks = function(id){
+  const req = new XMLHttpRequest();
+  req.onload = function(){
+    if(this.status == 200){
+      const todoList = TodoList.load(this.responseText);
+      transferorTitle('#todo-tasks', todoList.tasksToHtml(id));
+    }
+  };
+  req.open('GET', 'todoList');
+  req.send();
+};
+
 const renderTask = function(){
-  const 
-}
+  const title = event.target;
+  loadTasks(title.id);
+};

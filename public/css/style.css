@@ -36,26 +36,44 @@ body{
 }
 
 #create-button{
-  margin: 0px 0px 0px 1.5px;
+  margin: 0px 0px 0px 2px;
   cursor: pointer;
 }
 
 #todo-items{
-  position: relative;
+  position: absolute;
   left:2%;
   width: 300px;
+  top: 150px;
   background-color: rgb(208, 208, 208);
   border-bottom: 1px solid black;
   overflow: scroll;
   cursor: pointer;
-  height: 645px;
+  height:630px;
   border-radius: 20px;
 }
 
-#todo{
+.todo{
   margin-left: 30px;
   margin-right:30px ;
   border-bottom: 1px solid rgb(147, 146, 146);
   font-weight: 500;
   line-height: 3;
 }
+ 
+#todo-tasks{
+  width: 1000px;
+  height:630px;
+  background-color: rgb(208, 210, 211);
+  position: absolute;
+  right: 5%;
+  top: 150px;
+}
+
+.subTask{
+  margin-left: 250px; 
+  font-weight: 500;
+  line-height: 3;
+  display: flex;
+}
+ 
