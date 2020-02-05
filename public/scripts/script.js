@@ -4,15 +4,10 @@ const transferorTitle = function(id, html){
 };
 
 const updatePage = function(){
-  const req = new XMLHttpRequest();
-  req.onload = function(){
-    if(this.status == 200){
-      const todoList = TodoList.load(this.responseText);
-      transferorTitle('#todo-items', todoList.titleToHtml());
-    }
-  };
-  req.open('GET', 'todoList');
-  req.send();
+  xhrGetRequest('todoList', (responseText) => {
+    const todoList = TodoList.load(responseText);
+    transferorTitle('#todo-items', todoList.titleToHtml());
+  });
 };
 
 const showTitle = function(){
@@ -22,27 +17,14 @@ const showTitle = function(){
     return alert('Please Enter Title' );
   }
   todoTitle.value = '';
-  const req = new XMLHttpRequest();
-  req.onload = function(){
-    if(this.status == 201){
-      updatePage();
-    }
-  };
-  req.open('POST', 'todo');
-  req.setRequestHeader('Content-Type', 'text/plain');
-  req.send(titleText);
+  xhrPostRequest('todo', titleText, 'text/plain', updatePage);
 };
 
 const loadTasks = function(id){
-  const req = new XMLHttpRequest();
-  req.onload = function(){
-    if(this.status == 200){
-      const todoList = TodoList.load(this.responseText);
-      transferorTitle('#todo-tasks', todoList.tasksToHtml(id));
-    }
-  };
-  req.open('GET', 'todoList');
-  req.send();
+  xhrGetRequest('todoList', (responseText) => {
+    const todoList = TodoList.load(responseText);
+    transferorTitle('#todo-tasks', todoList.tasksToHtml(id));
+  });
 };
 
 const renderTask = function(){

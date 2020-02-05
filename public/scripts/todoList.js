@@ -1,14 +1,16 @@
 const subTaskHtml = function(subTask){
   return `
     <div class="subTask" id="${subTask.id}">
-    <input type="checkbox" ${subTask.status ? 'true' : 'false'}>
+    <input type="checkbox">
     <label>${subTask.text}</label>
   </div>
   <br>`;
 };
 
 const updateTitleToHtml = function(todo){
-  return `<h3 id=${todo.id} class="todo" onclick="renderTask()">${todo.title}</h3>`;
+  return `
+  <h3 id=${todo.id} class="todo" onclick="renderTask()">${todo.title}</h3>
+  `;
 };
 
 class TodoList{
