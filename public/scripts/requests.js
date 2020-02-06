@@ -1,7 +1,7 @@
 const xhrGetRequest = function(url, callback){
   const req = new XMLHttpRequest();
   req.onload = function(){
-    if(this.status == 200){
+    if(this.status === 200){
       callback(this.responseText);
     }
   };
@@ -12,7 +12,7 @@ const xhrGetRequest = function(url, callback){
 const xhrPostRequest = function(url, content, contentType, callback){
   const req = new XMLHttpRequest();
   req.onload = function(){
-    if(this.status == 201){
+    if(this.status === 201){
       callback();
     }
   };

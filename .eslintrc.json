@@ -99,7 +99,7 @@
     {
       "files": [
         "test/handlersTest.js",
-        "public/scripts/hideCanForSec.js"
+        "public/scripts/*.js"
       ],
       "rules": {
         "max-len": "warn",

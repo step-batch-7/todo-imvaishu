@@ -2,10 +2,9 @@ const subTaskHtml = function(task){
   return `
   <div class="subTask" id="${task.id}">
     <input type="checkbox"><label>${task.taskTitle}</label>
-    <button id="clear-button" type="button" 
+    <button id="clear-button" onclick="clearTask()" type="button" 
     <i class="material-icons">clear</i></button>
-  </div>
-  <br>`;
+  </div>`;
 };
 
 const updateTitleToHtml = function(todo){
@@ -32,7 +31,7 @@ class TodoList{
   }
 
   tasksToHtml(id){
-    const todo = this.todoList.find((todo) => todo.id == id);
+    const todo = this.todoList.find((todo) => todo.id === id);
 
     const htmlForTasks = `
     <div class="subTask">

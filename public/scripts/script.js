@@ -51,3 +51,15 @@ const addSubTask = function(){
     loadTasks(todoId);
   } );
 };
+
+const clearTask = function(){
+  const task = event.target.parentElement;
+  const subtaskId = task.id;
+  const todo = document.querySelector('.selected');
+  const todoId = todo.id;
+  const content = JSON.stringify({todoId, subtaskId });
+
+  xhrPostRequest('deleteSubtask', content, 'application/json', function() {
+    loadTasks(todoId);
+  });
+};
