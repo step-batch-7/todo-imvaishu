@@ -29,5 +29,25 @@ const loadTasks = function(id){
 
 const renderTask = function(){
   const title = event.target;
+  const elements = document.querySelectorAll('.selected');
+  elements.forEach((element) => {
+    element.classList.remove('selected');
+  });
+  title.classList.add('selected');
   loadTasks(title.id);
+};
+
+const addSubTask = function(){
+  const subTaskTitle = document.querySelector('#subTask-title');
+  const titleText = subTaskTitle.value;
+  if(titleText === ''){
+    return alert('Please Enter subTask..' );
+  }
+  subTaskTitle.value = '';
+  const todo = document.querySelector('.selected');
+  const todoId = todo.id;
+  const content = JSON.stringify({todoId, titleText});
+  xhrPostRequest('subTask', content, 'application/json', function() {
+    loadTasks(todoId);
+  } );
 };

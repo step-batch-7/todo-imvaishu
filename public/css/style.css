@@ -68,6 +68,7 @@ body{
   position: absolute;
   right: 5%;
   top: 150px;
+  overflow: scroll;  
 }
 
 .subTask{
@@ -77,3 +78,11 @@ body{
   display: flex;
 }
  
+#subTask-title{
+  width: 450px;
+  height:34px
+}
+
+.selected{
+  background-color: rgb(244, 210, 216);
+}

@@ -1,8 +1,8 @@
-const subTaskHtml = function(subTask){
+const subTaskHtml = function(task){
   return `
-    <div class="subTask" id="${subTask.id}">
+  <div class="subTask" id="${task.id}">
     <input type="checkbox">
-    <label>${subTask.text}</label>
+    <label>${task.taskTitle}</label>
   </div>
   <br>`;
 };
@@ -33,14 +33,16 @@ class TodoList{
 
     const htmlForTasks = `
     <div class="subTask">
-    <input id="todo-title" type="text" placeholder = "Enter subTask..." required>
-    <button id="create-button" type="button" <i class="material-icons">add</i></button>
+    <input id="subTask-title" 
+    type="text" placeholder = "Enter subTask..." required>
+    <button onclick="addSubTask();" id="create-button"
+     type="button" <i class="material-icons">add</i></button>
     </div>
     `;
 
     const html = todo.tasks ?
-      todo.tasks.map((subTask) => subTaskHtml(subTask)).join('') : '';
+      todo.tasks.map((task) => subTaskHtml(task)).join('') : '';
 
-    return html + htmlForTasks;
+    return htmlForTasks + html;
   }
 }
