@@ -1,15 +1,17 @@
 const subTaskHtml = function(task){
   return `
   <div class="subTask" id="${task.id}">
-    <input type="checkbox">
-    <label>${task.taskTitle}</label>
+    <input type="checkbox"><label>${task.taskTitle}</label>
+    
   </div>
   <br>`;
 };
 
 const updateTitleToHtml = function(todo){
   return `
-  <h3 id=${todo.id} class="todo" onclick="renderTask()">${todo.title}</h3>
+  <button id="delete-button" type="button" 
+    <i class="material-icons">delete_sweep</i></button>
+  <label id=${todo.id} class="todo" onclick="renderTask()">${todo.title}</label>
   `;
 };
 

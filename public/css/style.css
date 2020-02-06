@@ -1,10 +1,10 @@
 body{
   background-color: rgb(75, 72, 72);
+  font-family: sans-serif;
 }
 
 .heading{
   text-align: center; 
-  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(42, 40, 40, 0.5);
   color: rgb(247, 245, 243);
 }
 
@@ -42,7 +42,7 @@ body{
 
 #todo-items{
   position: absolute;
-  left:2%;
+  left:2.5%;
   width: 300px;
   top: 150px;
   background-color: rgb(208, 208, 208);
@@ -55,7 +55,7 @@ body{
 
 .todo{
   margin-left: 30px;
-  margin-right:30px ;
+  margin-right:45px ;
   border-bottom: 1px solid rgb(147, 146, 146);
   font-weight: 500;
   line-height: 3;
@@ -72,10 +72,14 @@ body{
 }
 
 .subTask{
-  margin-left: 250px; 
+  margin-left: 250px;
+  margin-right: 250px;  
   font-weight: 500;
   line-height: 3;
   display: flex;
+  border: 1px solid black;
+  border-radius: 5px;
+  overflow: scroll;
 }
  
 #subTask-title{
@@ -84,5 +88,14 @@ body{
 }
 
 .selected{
-  background-color: rgb(244, 210, 216);
+  background-color: rgb(230, 229, 229);
+}
+
+#delete-button{
+  position: absolute;
+  right: 5px;
+  height: 40px;
+  width: 40px;
+  border: none;
+  background-color:  rgb(208, 208, 208);
 }
