@@ -2,7 +2,7 @@ const subTaskHtml = function(task){
   return `
   <div class="subTask" id="${task.id}">
     <input type="checkbox"><label>${task.taskTitle}</label>
-    <button id="clear-button" onclick="clearTask()" type="button" 
+    <button id="clear-button" onclick="clearTask()" 
     <i class="material-icons">clear</i></button>
   </div>`;
 };
@@ -10,7 +10,7 @@ const subTaskHtml = function(task){
 const updateTitleToHtml = function(todo){
   return `
   <div>
-  <button id="delete-button" onclick="clearTodo()" type="button" 
+  <button onclick="clearTodo();" id="delete-button"  
     <i class="material-icons">delete_sweep</i></button>
   <label id=${todo.id} class="todo" onclick="renderTask()">${todo.title}</label>
   </div>`;
@@ -25,7 +25,7 @@ class TodoList{
     const list = JSON.parse(content);
     return new TodoList(list);
   }
-
+  
   titleToHtml(){
     const reverseContent = this.todoList.slice().reverse();
     return reverseContent.map(updateTitleToHtml).join('');

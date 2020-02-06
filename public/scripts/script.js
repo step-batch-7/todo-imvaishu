@@ -64,9 +64,10 @@ const clearTask = function(){
   });
 };
 
-const clearTodo = function(){
+const clearTodo = function(){ 
   const task = event.target.parentElement;
   const todo = document.querySelector(`label ${task.id}`);
   const todoId = todo.id;
-  xhrPostRequest('deleteTodo', todoId, 'plain/text', updatePage);
+  document.querySelector('#todo-tasks').innerHTML = '';
+  xhrPostRequest('deleteTodo', todoId, 'text/plain', updatePage);
 };
