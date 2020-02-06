@@ -2,7 +2,8 @@ const subTaskHtml = function(task){
   return `
   <div class="subTask" id="${task.id}">
     <input type="checkbox"><label>${task.taskTitle}</label>
-    
+    <button id="clear-button" type="button" 
+    <i class="material-icons">clear</i></button>
   </div>
   <br>`;
 };
