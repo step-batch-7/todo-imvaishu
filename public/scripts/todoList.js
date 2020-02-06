@@ -35,11 +35,10 @@ class TodoList{
     const todo = this.todoList.find((todo) => todo.id === id);
 
     const htmlForTasks = `
-    <div class="subTask">
-    <input id="subTask-title" 
-    type="text" placeholder = "Enter subTask..." required>
+   <div class="subTask">
+   <input id="subTask-title" type="text" placeholder = "Enter subTask" required>
     <button onclick="addSubTask();" id="create-button"
-     type="button" <i class="material-icons">add</i></button>
+    type="button" <i class="material-icons">add</i></button>
     </div>
     `;
 
