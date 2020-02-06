@@ -71,3 +71,22 @@ const clearTodo = function(){
   document.querySelector('#todo-tasks').innerHTML = '';
   xhrPostRequest('deleteTodo', todoId, 'text/plain', updatePage);
 };
+
+const updateStatus = function(){
+  const checkedElement = event.target;
+  const subtask = checkedElement.parentElement;
+  const subtaskId = subtask.id;
+
+  const todo = document.querySelector('.selected');
+  const todoId = todo.id;
+
+  let status = false;
+  if(checkedElement.checked){
+    status = true;
+  }
+  const content = JSON.stringify({todoId, subtaskId, status});
+
+  xhrPostRequest('updateStatus', content, 'application/json', function() {
+    loadTasks(todoId);
+  });
+};

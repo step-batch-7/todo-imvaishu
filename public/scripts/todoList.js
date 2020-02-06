@@ -1,7 +1,9 @@
 const subTaskHtml = function(task){
+  const status = task.checked ? 'checked' : '';
   return `
   <div class="subTask" id="${task.id}">
-    <input type="checkbox"><label>${task.taskTitle}</label>
+    <input type="checkbox" ${status} onclick="updateStatus()">
+    <label>${task.taskTitle}</label>
     <button id="clear-button" onclick="clearTask()" 
     <i class="material-icons">clear</i></button>
   </div>`;
