@@ -9,10 +9,11 @@ const subTaskHtml = function(task){
 
 const updateTitleToHtml = function(todo){
   return `
-  <button id="delete-button" type="button" 
+  <div>
+  <button id="delete-button" onclick="clearTodo()" type="button" 
     <i class="material-icons">delete_sweep</i></button>
   <label id=${todo.id} class="todo" onclick="renderTask()">${todo.title}</label>
-  `;
+  </div>`;
 };
 
 class TodoList{
