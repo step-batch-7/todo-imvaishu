@@ -13,9 +13,7 @@ const updatePage = function(){
 const showTitle = function(){
   const todoTitle = document.querySelector('#todo-title');
   const titleText = todoTitle.value;
-  if(titleText === ''){
-    return alert('Please Enter Title' );
-  }
+  
   todoTitle.value = '';
   const body = JSON.stringify(titleText);
   xhrPostRequest('todo', body, updatePage);
@@ -41,9 +39,6 @@ const renderTask = function(){
 const addSubTask = function(){
   const subTaskTitle = document.querySelector('#subTask-title');
   const titleText = subTaskTitle.value;
-  if(titleText === ''){
-    return alert('Please Enter subTask..' );
-  }
   subTaskTitle.value = '';
   const todo = document.querySelector('.selected');
   const todoId = todo.id;

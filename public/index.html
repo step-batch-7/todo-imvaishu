@@ -12,12 +12,12 @@
 
 <body onload="updatePage();">
   <h1 class="heading">TODO</h1>
-  <div class="todo-page">
-    <div class="todo">
-      <input id="todo-title" type="text" placeholder="Create Your TODO here.....">
+  <div class="container">
+    <div class="todo-container">
+      <input id="todo-title" type="text" placeholder="Your TODO" required>
       <button id="create-button" onclick="showTitle()"> <i class="material-icons">add</i></button>
+      <div id="todo-items"></div>
     </div>
-    <div id="todo-items"></div>
     <div id="todo-tasks"></div>
   </div>
 </body>

@@ -2,8 +2,8 @@ const subTaskHtml = function(task){
   const status = task.checked ? 'checked' : '';
   return `
   <div class="subTask" id="${task.id}">
-    <div class="task"><input type="checkbox" ${status} onclick="updateStatus()">
-    <label>${task.taskTitle}</label></div>
+    <div class="task"><input type="checkbox" ${status} 
+    onclick="updateStatus()"><label>${task.taskTitle}</label></div>
     <a id="clear-button" onclick="clearTask()" 
     <i class="material-icons">clear</i></a>
   </div>`;
@@ -11,10 +11,11 @@ const subTaskHtml = function(task){
 
 const updateTitleToHtml = function(todo){
   return `
-  <div>
+  <div class="todo">
+  <div class="title-block">
+  <label id=${todo.id} onclick="renderTask()">${todo.title}</label></div>
   <a onclick="clearTodo();" id="delete-button" > 
-    <i class="material-icons">delete_sweep</i></a>
-  <label id=${todo.id} class="todo" onclick="renderTask()">${todo.title}</label>
+    <i class="material-icons">remove</i></a>
   </div>`;
 };
 
@@ -37,7 +38,7 @@ class TodoList{
     const todo = this.todoList.find((todo) => todo.id === id);
 
     const htmlForTasks = `
-   <div class="subTask">
+   <div class= "title-box">
    <input id="subTask-title" type="text" placeholder = "Enter subTask" required>
     <button onclick="addSubTask();" id="create-button"
     type="button" <i class="material-icons">add</i></button>

@@ -1,117 +1,71 @@
 body{
   font-family: sans-serif;
-  background-color: rgb(240, 242, 242);
+  background-color: rgb(235, 235, 235);
+  font-weight: 300; 
 }
 
 .heading{
   text-align: center; 
+  font-weight: 100; 
 }
 
-.todo-page{
-  overflow: scroll;
-}
-
-.heading,
-.todo-page{
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 8px;
-}
-
-.todo{
+.container{
+  height: 700px;
+  width: 100%;
+  border: 1px solid black;
   display: flex;
-  justify-content: center;
-  margin: 1% 0% 0% 0%;
-  flex-wrap: wrap;
 }
 
-#todo-title{
+.todo-container{
+  overflow: scroll;
+  width: 500px;
+  height: 700px;
+  border-right:1px solid black;
+}
+
+.subtask-container{
+  overflow: scroll;
+  width: 900px;
+}
+
+#todo-title,
+#subTask-title{
   width: 450px;
-  height:34px;
-  border-radius: 8px;
   font-size: 20px;
   font-weight: 300;
 }
 
-#create-button{
-  margin: 0px 0px 0px 2px;
-  cursor: pointer;
+#todo-title,
+#create-button,
+#subTask-title{
+  margin-top: 3px;
+  height:35px;
   border-radius: 8px;
-  display: -webkit-box;
+  border: none;
 }
 
-#todo-items{
-  position: absolute;
-  left:2.5%;
-  width: 300px;
-  top: 150px;
-  background-color: rgb(208, 208, 208);
-  border: 2px solid rgb(195, 239, 255);
-  overflow: scroll;
-  cursor: pointer;
-  height:630px;
-  border-radius: 8px;
-}
-
-.todo{
-  margin-left: 30px;
-  margin-right:45px ;
-  font-weight: 500;
-  line-height: 3;
-  border-bottom: 1px solid rgb(195, 239, 255);
-  cursor: pointer;
-}
- 
-#todo-tasks{
-  width: 1000px;
-  height:630px;
-  background-color: rgb(208, 210, 211);
-  border: 2px solid rgb(195, 239, 255);
-  position: absolute;
-  right: 5%;
-  top: 150px;
-  overflow: scroll;  
-  border-radius: 8px;
-}
-
+.todo,
 .subTask{
-  margin-left: 250px;
-  margin-right: 250px;  
-  font-weight: 500;
+  font-weight: 100;
+  font-size: 20px;
   line-height: 3;
-  border: 2px solid rgb(195, 239, 255);
-  border-radius: 5px;
+  font-family: sans-serif;
   overflow: scroll;
   margin-bottom: 20px;
-  display:flex;
+  border: none;
+  background-color: rgb(240, 240, 240);
+  margin-top: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
- 
-#subTask-title{
-  width: 450px;
-  height:34px;
-  font-size: 20px;
-  font-weight: 100;
+
+.title-box,
+.subTask{
+  margin-left: 200px;
+  width: 500px;
 }
 
 .selected{
   background-color: rgb(230, 229, 229);
-}
-
-#delete-button{
-  position: absolute;
-  right: 5px;
-  height: 40px;
-  width: 40px;
-  border: none;
-  background-color:  rgb(208, 208, 208);
-  cursor: pointer;
-}
-
-#clear-button{
-  position: absolute;
-    background-color: rgb(208, 210, 211);
-    border: none;
-    left: 720px;
-    margin-top: 11px;
-    cursor: pointer;
 }
