@@ -23,10 +23,18 @@ data_Structure should be:
 }
 ];
 
-tools:
-checkbox
-add
-remove
-
+--DONE--tools:
+--DONE--checkbox
+--DONE--add
+--DONE--remove
+--DONE--config path
 
 --DONE-- extract classes
+tests--->
+1)config path for testing
+2)get request
+3)post request
+
+want to change some functions in script.js to make mor generic
+
+
