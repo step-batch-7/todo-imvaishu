@@ -65,7 +65,7 @@ const clearTask = function(){
 };
 
 const clearTodo = function(){ 
-  const task = event.target.parentElement;
+  const task = event.target.parentElement.parentElement;
   const todo = document.querySelector(`label ${task.id}`);
   const todoId = todo.id;
   document.querySelector('#todo-tasks').innerHTML = '';

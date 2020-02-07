@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "nyc mocha",
-    "start": "export DATA_STORE=$(pwd)/data/todo.json; node server.js"
+    "start": "mkdir -p data ;export DATA_STORE=$(pwd)/data/todo.json; node server.js"
   },
   "repository": {
     "type": "git",

@@ -2,18 +2,18 @@ const subTaskHtml = function(task){
   const status = task.checked ? 'checked' : '';
   return `
   <div class="subTask" id="${task.id}">
-    <input type="checkbox" ${status} onclick="updateStatus()">
-    <label>${task.taskTitle}</label>
-    <button id="clear-button" onclick="clearTask()" 
-    <i class="material-icons">clear</i></button>
+    <div class="task"><input type="checkbox" ${status} onclick="updateStatus()">
+    <label>${task.taskTitle}</label></div>
+    <a id="clear-button" onclick="clearTask()" 
+    <i class="material-icons">clear</i></a>
   </div>`;
 };
 
 const updateTitleToHtml = function(todo){
   return `
   <div>
-  <button onclick="clearTodo();" id="delete-button"  
-    <i class="material-icons">delete_sweep</i></button>
+  <a onclick="clearTodo();" id="delete-button" > 
+    <i class="material-icons">delete_sweep</i></a>
   <label id=${todo.id} class="todo" onclick="renderTask()">${todo.title}</label>
   </div>`;
 };

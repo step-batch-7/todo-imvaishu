@@ -78,12 +78,11 @@ body{
   margin-right: 250px;  
   font-weight: 500;
   line-height: 3;
-  display: flex;
   border: 1px solid black;
   border-radius: 5px;
   overflow: scroll;
   margin-bottom: 20px;
-  display: -webkit-box
+  display:flex;
 }
  
 #subTask-title{
@@ -106,10 +105,10 @@ body{
 }
 
 #clear-button{
-  position: relative;
-  background-color: rgb(208, 210, 211);
-  border: none;
-  left: 379px;
-  top: 5px;
-  cursor: pointer;
+  position: absolute;
+    background-color: rgb(208, 210, 211);
+    border: none;
+    left: 720px;
+    margin-top: 11px;
+    cursor: pointer;
 }
