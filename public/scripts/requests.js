@@ -17,5 +17,6 @@ const xhrPostRequest = function(url, body, callback){
     }
   };
   req.open('POST', url);
+  req.setRequestHeader('Content-Type', 'application/json');
   req.send(body);
 };

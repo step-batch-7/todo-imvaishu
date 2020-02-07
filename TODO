@@ -37,4 +37,16 @@ tests--->
 
 want to change some functions in script.js to make mor generic
 
+css
+same font for all body
+reuse of classes in css
+i will give all attributes in body or container and overwrite at individual level
+get rid of the color and  border-bottom
+change color of border
+
+--DONE--change the content type in json
+
+use required instead of if else in todo title
+
+on window load =>load the page 
 
