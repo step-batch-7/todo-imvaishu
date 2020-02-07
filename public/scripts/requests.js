@@ -9,7 +9,7 @@ const xhrGetRequest = function(url, callback){
   req.send();
 };
 
-const xhrPostRequest = function(url, content, contentType, callback){
+const xhrPostRequest = function(url, body, callback){
   const req = new XMLHttpRequest();
   req.onload = function(){
     if(this.status === 201){
@@ -17,6 +17,5 @@ const xhrPostRequest = function(url, content, contentType, callback){
     }
   };
   req.open('POST', url);
-  req.setRequestHeader('Content-Type', contentType);
-  req.send(content);
+  req.send(body);
 };

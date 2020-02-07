@@ -78,7 +78,7 @@ body{
   margin-right: 250px;  
   font-weight: 500;
   line-height: 3;
-  border: 1px solid black;
+  border: 2px solid rgb(195, 239, 255);
   border-radius: 5px;
   overflow: scroll;
   margin-bottom: 20px;

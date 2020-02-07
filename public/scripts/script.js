@@ -17,7 +17,8 @@ const showTitle = function(){
     return alert('Please Enter Title' );
   }
   todoTitle.value = '';
-  xhrPostRequest('todo', titleText, 'text/plain', updatePage);
+  const body = `titleText=${titleText}`;
+  xhrPostRequest('todo', body, updatePage);
 };
 
 const loadTasks = function(id){
@@ -46,8 +47,8 @@ const addSubTask = function(){
   subTaskTitle.value = '';
   const todo = document.querySelector('.selected');
   const todoId = todo.id;
-  const content = JSON.stringify({todoId, titleText});
-  xhrPostRequest('subTask', content, 'application/json', function() {
+  const body = `todoId=${todoId}&titleText=${titleText}`;
+  xhrPostRequest('subTask', body, function() {
     loadTasks(todoId);
   } );
 };
@@ -57,9 +58,8 @@ const clearTask = function(){
   const subtaskId = task.id;
   const todo = document.querySelector('.selected');
   const todoId = todo.id;
-  const content = JSON.stringify({todoId, subtaskId });
-
-  xhrPostRequest('deleteSubtask', content, 'application/json', function() {
+  const body = `todoId=${todoId}&subtaskId=${subtaskId}`;
+  xhrPostRequest('deleteSubtask', body, function() {
     loadTasks(todoId);
   });
 };
@@ -69,13 +69,13 @@ const clearTodo = function(){
   const todo = document.querySelector(`label ${task.id}`);
   const todoId = todo.id;
   document.querySelector('#todo-tasks').innerHTML = '';
-  xhrPostRequest('deleteTodo', todoId, 'text/plain', updatePage);
+  xhrPostRequest('deleteTodo', todoId, updatePage);
 };
 
 const updateStatus = function(){
   const checkedElement = event.target;
   const subtask = checkedElement.parentElement;
-  const subtaskId = subtask.id;
+  const taskId = subtask.id;
 
   const todo = document.querySelector('.selected');
   const todoId = todo.id;
@@ -84,9 +84,8 @@ const updateStatus = function(){
   if(checkedElement.checked){
     status = true;
   }
-  const content = JSON.stringify({todoId, subtaskId, status});
-
-  xhrPostRequest('updateStatus', content, 'application/json', function() {
+  const body = `todoId=${todoId}&taskId=${taskId}&status=${status}`;
+  xhrPostRequest('updateStatus', body, function(){
     loadTasks(todoId);
   });
 };
