@@ -14,8 +14,14 @@
   <h1 class="heading">TODO</h1>
   <div class="container">
     <div class="todo-container">
-      <input id="todo-title" type="text" placeholder="Your TODO" required>
-      <button id="create-button" onclick="showTitle()"> <i class="material-icons">add</i></button>
+      <div class="title">
+        <div>
+          <input id="todo-title" type="text" required placeholder="Your TODO">
+        </div>
+        <div>
+          <button id="create-button" onclick="showTitle()"> <i class="material-icons">add</i></button>
+        </div>
+      </div>
       <div id="todo-items"></div>
     </div>
     <div id="todo-tasks"></div>

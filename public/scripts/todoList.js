@@ -2,10 +2,10 @@ const subTaskHtml = function(task){
   const status = task.checked ? 'checked' : '';
   return `
   <div class="subTask" id="${task.id}">
-    <div class="task"><input type="checkbox" ${status} 
+    <div class="task"><input type="checkbox" ${status} id="checkbox"
     onclick="updateStatus()"><label>${task.taskTitle}</label></div>
-    <a id="clear-button" onclick="clearTask()" 
-    <i class="material-icons">clear</i></a>
+   <div> <a id="clear-button" onclick="clearTask()" 
+    <i class="material-icons">clear</i></a></div>
   </div>`;
 };
 
@@ -38,10 +38,13 @@ class TodoList{
     const todo = this.todoList.find((todo) => todo.id === id);
 
     const htmlForTasks = `
-   <div class= "title-box">
-   <input id="subTask-title" type="text" placeholder = "Enter subTask" required>
-    <button onclick="addSubTask();" id="create-button"
-    type="button" <i class="material-icons">add</i></button>
+    <div class= "title-box">
+      <div>
+        <input id="subTask-title" type="text" placeholder = "Enter subTask" required>
+      </div>
+      <div>
+        <button onclick="addSubTask();" id="create-button"type="button" <i class="material-icons">add</i></button>
+      </div>
     </div>
     `;
 

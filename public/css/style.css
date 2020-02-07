@@ -12,36 +12,45 @@ body{
 .container{
   height: 700px;
   width: 100%;
-  border: 1px solid black;
+  border-top: 3px solid whitesmoke;
   display: flex;
+}
+
+#todo-title,
+#subTask-title{
+  width: 352px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+button{
+  border: none;
+}
+
+#create-button{
+  height: 30px;
+}
+
+.title-box,
+.title{
+  margin-top: 3px;
+  height:35px;
+  border-radius: 4px;
+  border: none;
+  display: flex;
+  justify-content: space-between
 }
 
 .todo-container{
   overflow: scroll;
-  width: 500px;
+  width: 400px;
   height: 700px;
-  border-right:1px solid black;
+  border-right: 4px solid whitesmoke;
 }
 
 .subtask-container{
   overflow: scroll;
   width: 900px;
-}
-
-#todo-title,
-#subTask-title{
-  width: 450px;
-  font-size: 20px;
-  font-weight: 300;
-}
-
-#todo-title,
-#create-button,
-#subTask-title{
-  margin-top: 3px;
-  height:35px;
-  border-radius: 8px;
-  border: none;
 }
 
 .todo,
@@ -60,12 +69,22 @@ body{
   justify-content: space-between;
 }
 
+a{
+  cursor: pointer;
+}
+
 .title-box,
 .subTask{
   margin-left: 200px;
-  width: 500px;
+  width: 400px;
 }
 
 .selected{
   background-color: rgb(230, 229, 229);
+}
+
+#checkbox{
+  height: 10px;
+  width: 30px;
+  cursor: pointer;
 }

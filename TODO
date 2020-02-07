@@ -37,7 +37,7 @@ tests--->
 
 want to change some functions in script.js to make mor generic
 
-css
+--DONE--css
 same font for all body
 reuse of classes in css
 i will give all attributes in body or container and overwrite at individual level
