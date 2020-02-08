@@ -40,7 +40,7 @@ class TodoList{
     const htmlForTasks = `
     <div class= "title-box">
       <div>
-        <input id="subTask-title" type="text" placeholder = "Enter subTask" required>
+        <input id="subTask-title" type="text" placeholder = "Your Subtask" required>
       </div>
       <div>
         <button onclick="addSubTask();" id="create-button"type="button" <i class="material-icons">add</i></button>
