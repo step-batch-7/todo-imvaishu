@@ -16,6 +16,17 @@ describe('GET home page', () => {
   });
 });
 
+describe('GET other page', () => {
+  it('should get other page css path given ', (done) => {
+    request(app.serve.bind(app))
+
+      .get('/css/style.css')
+      .set('Accept', '*/*')
+      .expect(200)
+      .expect('Content-Type', 'text/css', done);
+  });
+});
+
 describe('GET serveTodoList', () => {
   it('should get todoList /todoList path given ', (done) => {
     request(app.serve.bind(app))
