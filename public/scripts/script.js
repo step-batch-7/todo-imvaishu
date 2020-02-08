@@ -90,3 +90,12 @@ const updateStatus = function(){
     loadTasks(todoId);
   });
 };
+
+const editTodoTitle = function(){
+  const element = event.target.parentElement.parentElement;
+  const titleId = element.id;
+  const titleText = event.target.innerText;
+  
+  const content = JSON.stringify({titleId, titleText});
+  xhrPostRequest('editTitle', content, updatePage);
+};
