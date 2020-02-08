@@ -11,13 +11,15 @@
 </head>
 
 <body onload="updatePage();">
-
-  <h1 class="heading"> <img src="svg.icon/notepad.png">TODO</h1>
+  <div class="heading">
+    <div><img src="svg.icon/notepad.png"><span id="topTitle">TODO</span></div>
+    <div><input id="search-title" type="text" placeholder="Search TODO here"></div>
+  </div>
   <div class="container">
     <div class="todo-container">
       <div class="title">
         <div>
-          <input id="todo-title" type="text" required placeholder="Your TODO">
+          <input id="todo-title" type="text" placeholder="Your TODO">
         </div>
         <div>
           <button id="create-button" onclick="showTitle()"> <i class="material-icons">add</i></button>
