@@ -23,6 +23,7 @@ img{
 #todo-title,
 #subTask-title{
   width: 352px;
+  height: 40px;
   font-size: 20px;
   font-weight: 300;
 }
@@ -32,7 +33,7 @@ button{
 }
 
 #create-button{
-  height: 30px;
+  height: 45px;
 }
 
 .title-box,

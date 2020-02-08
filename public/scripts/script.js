@@ -29,7 +29,8 @@ const loadTasks = function(id){
 };
 
 const renderTask = function(){
-  const title = event.target;
+  const titleText = event.target;
+  const title = titleText.parentElement.parentElement;
   const elements = document.querySelectorAll('.selected');
   elements.forEach((element) => {
     element.classList.remove('selected');
@@ -47,6 +48,7 @@ const addSubTask = function(){
   subTaskTitle.value = '';
   const todo = document.querySelector('.selected');
   const todoId = todo.id;
+
   const content = JSON.stringify({todoId, titleText});
   xhrPostRequest('subTask', content, function() {
     loadTasks(todoId);
@@ -54,7 +56,7 @@ const addSubTask = function(){
 };
 
 const clearTask = function(){
-  const task = event.target.parentElement;
+  const task = event.target.parentElement.parentElement;
   const subtaskId = task.id;
   const todo = document.querySelector('.selected');
   const todoId = todo.id;
@@ -67,8 +69,8 @@ const clearTask = function(){
 
 const clearTodo = function(){ 
   const task = event.target.parentElement.parentElement;
-  const todo = document.querySelector(`label ${task.id}`);
-  const todoId = todo.id;
+  const todoId = task.id;
+  
   document.querySelector('#todo-tasks').innerHTML = '';
   const body = JSON.stringify({todoId});
   xhrPostRequest('deleteTodo', body, updatePage);

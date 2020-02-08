@@ -11,9 +11,9 @@ const subTaskHtml = function(task){
 
 const updateTitleToHtml = function(todo){
   return `
-  <div class="todo">
+  <div class="todo" id=${todo.id} >
   <div class="title-block">
-  <label id=${todo.id} onclick="renderTask()">${todo.title}</label></div>
+  <label onclick="renderTask()">${todo.title}</label></div>
   <a onclick="clearTodo();" id="delete-button" > 
     <i class="material-icons">remove</i></a>
   </div>`;
