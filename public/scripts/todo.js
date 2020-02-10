@@ -29,8 +29,7 @@ const showTitle = function(){
 };
 
 const renderTask = function(){
-  const titleText = event.target;
-  const title = titleText.parentElement.parentElement;
+  const title = event.target;
   const elements = document.querySelectorAll('.selected');
   elements.forEach((element) => {
     element.classList.remove('selected');
@@ -87,4 +86,13 @@ const updateStatus = function(){
   xhrPostRequest('updateStatus', content, function() {
     loadTasks(todoId);
   });
+};
+
+const editTodoTitle = function(){
+  const element = event.target.parentElement.parentElement;
+  const titleId = element.id;
+  const titleText = event.target.innerText;
+  
+  const content = JSON.stringify({titleId, titleText});
+  xhrPostRequest('editTitle', content, updatePage);
 };
