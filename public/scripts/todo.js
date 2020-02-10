@@ -13,7 +13,6 @@ const loadTasks = function(id){
 const updatePage = function(){
   xhrGetRequest('todoList', (responseText) => {
     const todoList = TodoList.load(responseText);
-    console.log(todoList);
     transferorTitle('#todo-items', todoList.titleToHtml());
   });
 };
