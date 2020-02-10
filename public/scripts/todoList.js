@@ -13,8 +13,7 @@ const updateTitleToHtml = function(todo){
   return `
   <div class="todo" id=${todo.id} >
   <div class="title-block">
-  <label onclick="renderTask()" contenteditable="true" 
-  onblur="editTodoTitle()">${todo.title}</label></div>
+  <label onclick="renderTask()">${todo.title}</label></div>
   <a onclick="clearTodo();" id="delete-button" > 
     <i class="material-icons">remove</i></a>
   </div>`;
