@@ -3,7 +3,8 @@ const subTaskHtml = function(task){
   return `
   <div class="subTask" id="${task.id}">
     <div class="task"><input type="checkbox" ${status} id="checkbox"
-    onclick="updateStatus()"><label>${task.taskTitle}</label></div>
+    onclick="updateStatus()"><label contentEditable="true" 
+    onblur="editSubtask()">${task.taskTitle}</label></div>
    <div> <a id="clear-button" onclick="clearTask()" 
     <i class="material-icons">clear</i></a></div>
   </div>`;

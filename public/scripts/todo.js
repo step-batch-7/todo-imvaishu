@@ -96,3 +96,15 @@ const editTodoTitle = function(){
   const content = JSON.stringify({titleId, titleText});
   xhrPostRequest('editTitle', content, updatePage);
 };
+
+const editSubtask = function(){
+  const element = event.target.parentElement.parentElement;
+  const subtaskId = element.id;
+  const todo = document.querySelector('.selected');
+  const titleText = event.target.innerText;
+
+  const content = JSON.stringify({todoId: todo.id, subtaskId, titleText});
+  xhrPostRequest('editSubtask', content, function(){
+    loadTasks(todo.id);
+  });
+};
