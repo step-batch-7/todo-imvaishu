@@ -38,7 +38,6 @@ class TodoList{
 
   tasksToHtml(id){
     const todo = this.todoList.find((todo) => todo.id === id);
-
     const htmlForTasks = `
     <div class= "title-box">
       <div>
@@ -50,9 +49,7 @@ class TodoList{
       </div>
     </div>
     `;
-
-    const html = todo.tasks ?
-      todo.tasks.map((task) => subTaskHtml(task)).join('') : '';
+    const html = todo.tasks ? todo.tasks.map((task) => subTaskHtml(task)).join('') : '';
 
     return htmlForTasks + html;
   }

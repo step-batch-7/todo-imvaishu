@@ -16,7 +16,7 @@ const updatePage = function(){
     transferorTitle('#todo-items', todoList.titleToHtml());
   });
 };
-
+ 
 const showTitle = function(){
   const todoTitle = document.querySelector('#todo-title');
   const titleText = todoTitle.value;
@@ -30,11 +30,13 @@ const showTitle = function(){
 
 const renderTask = function(){
   const title = event.target;
+
   const elements = document.querySelectorAll('.selected');
   elements.forEach((element) => {
     element.classList.remove('selected');
   });
   title.classList.add('selected');
+
   loadTasks(title.id);
 };
 
@@ -67,7 +69,8 @@ const clearTask = function(){
 const clearTodo = function(){ 
   const task = event.target.parentElement.parentElement;
   const todoId = task.id;
-  
+  event.stopPropagation();
+
   document.querySelector('#todo-tasks').innerHTML = '';
   const body = JSON.stringify({todoId});
   xhrPostRequest('deleteTodo', body, updatePage);
@@ -92,7 +95,8 @@ const editTodoTitle = function(){
   const element = event.target.parentElement.parentElement;
   const titleId = element.id;
   const titleText = event.target.innerText;
-  
+  event.stopPropagation();
+
   const content = JSON.stringify({titleId, titleText});
   xhrPostRequest('editTitle', content, updatePage);
 };

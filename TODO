@@ -55,6 +55,9 @@ on window load =>load the page
 
 
 writing test
+need to remove date in the data_Structure
+need to remove new dates from id 
+
 get rid of creating taskId and subtaskId again and again by making generic functions
 
 
