@@ -50,3 +50,21 @@ use required instead of if else in todo title
 
 on window load =>load the page 
 
+
+------------------------------------------PAIRING STARTED------------------------------
+
+
+writing test
+get rid of creating taskId and subtaskId again and again by making generic functions
+
+
+remaining requirements:
+1)search by title
+2)search by task
+3)login and sign up page;
+
+
+
+
+
+
