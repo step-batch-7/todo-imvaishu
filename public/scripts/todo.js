@@ -111,3 +111,17 @@ const editSubtask = function(){
     loadTasks(todo.id);
   });
 };
+
+const searchTitle = function(){
+  const searchText = event.target.value;
+  const [todoList] = new Array(document.querySelectorAll('.todo'));
+  todoList.forEach((todo) => {
+    todo.style.display = 'none';
+  });
+  todoList.forEach((todo) => {
+    const title = todo.children[0].innerText;
+    if(title.includes(searchText)){
+      todo.style.display = 'flex';
+    }
+  });
+};
