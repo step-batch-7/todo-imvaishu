@@ -57,7 +57,7 @@ const addSubTask = function(){
 };
 
 const clearTask = function(){
-  const task = event.target.parentElement.parentElement;
+  const [,, task] = event.path;
   const todo = document.querySelector('.selected');
   const content = JSON.stringify({todoId: todo.id, subtaskId: task.id});
 
@@ -67,7 +67,7 @@ const clearTask = function(){
 };
 
 const clearTodo = function(){ 
-  const task = event.target.parentElement.parentElement;
+  const [,, task] = event.path;
   const todoId = task.id;
   event.stopPropagation();
 
@@ -77,13 +77,12 @@ const clearTodo = function(){
 };
 
 const updateStatus = function(){
-  const checkedElement = event.target;
-  const subtask = checkedElement.parentElement.parentElement;
+  const [,, subtask] = event.path;
   const subtaskId = subtask.id;
 
   const todo = document.querySelector('.selected');
   const todoId = todo.id;
-  const status = checkedElement.checked;
+  const status = event.target.checked;
   const content = JSON.stringify({todoId, subtaskId, status});
 
   xhrPostRequest('updateStatus', content, function() {
@@ -92,18 +91,18 @@ const updateStatus = function(){
 };
 
 const editTodoTitle = function(){
-  const element = event.target.parentElement.parentElement;
-  const titleId = element.id;
-  const titleText = event.target.innerText;
   event.stopPropagation();
+  const [,, title] = event.path;
+  const titleId = title.id;
+  const titleText = event.target.innerText;
 
   const content = JSON.stringify({titleId, titleText});
   xhrPostRequest('editTitle', content, updatePage);
 };
 
 const editSubtask = function(){
-  const element = event.target.parentElement.parentElement;
-  const subtaskId = element.id;
+  const [,, subtask] = event.path;
+  const subtaskId = subtask.id;
   const todo = document.querySelector('.selected');
   const titleText = event.target.innerText;
 

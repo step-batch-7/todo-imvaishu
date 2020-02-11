@@ -54,9 +54,9 @@ on window load =>load the page
 ------------------------------------------PAIRING STARTED------------------------------
 
 
-writing test
-need to remove date in the data_Structure
-need to remove new dates from id 
+--DONE-- writing test
+--DONE--need to remove date in the data_Structure
+--DONE--need to remove new dates from id 
 
 get rid of creating taskId and subtaskId again and again by making generic functions
 
