@@ -3,7 +3,9 @@ const xhrGetRequest = function(url, callback){
   req.onload = function(){
     if(this.status === 200){
       callback(this.responseText);
-    }
+    }else {  
+      alert('Error', this.statusText); 
+    } 
   };
   req.open('GET', url);
   req.send();
@@ -14,7 +16,9 @@ const xhrPostRequest = function(url, body, callback){
   req.onload = function(){
     if(this.status === 201){
       callback();
-    }
+    }else {  
+      alert('Error', this.statusText); 
+    } 
   };
   req.open('POST', url);
   req.setRequestHeader('Content-Type', 'application/json');

@@ -68,7 +68,7 @@ remaining requirements:
 
 ----------------------------------
 handle =>
-client error:if status code is other than 200 or 201
+--DONE--client error:if status code is other than 200 or 201
 server error:if the content of post id n ot valid
 unit tests for the classes.
 --DONE--before deleting asking client/user confirm message
