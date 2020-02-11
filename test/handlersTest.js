@@ -2,6 +2,53 @@ const request = require('supertest');
 
 const {app} = require('../lib/handlers');
 
+describe('POST add todo', () => {
+  it('should add todo to given path', (done) => {
+    request(app.serve.bind(app))
+
+      .post('/todo')
+      .send('{"titleText":"something"}')
+      .expect(201, done);
+  });
+});
+
+describe('POST add sub task', () => {
+  it('should add sub task to given path', (done) => {
+    request(app.serve.bind(app))
+
+      .post('/subTask')
+      .send('{"todoId":"todo-0","titleText":"something"}')
+      .expect(201, done);
+  });
+});
+
+describe('POST update subtask status', () => {
+  it('should update status of particular subtask', (done) => {
+    request(app.serve.bind(app))
+      .post('/updateStatus')
+      .send('{"todoId":"todo-0","subtaskId":"subTask-0","status":true}')
+      .expect(201, done);
+  });
+});
+
+describe('POST edit title', () => {
+  it('should edit title of particular todo', (done) => {
+    request(app.serve.bind(app))
+      .post('/editTitle')
+      .send('{"titleId":"todo-0","titleText":"Nothing"}')
+      .expect(201, done);
+  });
+});
+
+describe('POST edit subtask title', () => {
+  it('should edit title of particular subtask', (done) => {
+    request(app.serve.bind(app))
+      .post('/editSubtask')
+      .send('{"todoId":"todo-0","subtaskId":"subTask-0","titleText":"Nothing"}')
+      .expect(201, done);
+  });
+});
+
 describe('GET home page', () => {
   it('should get index.html / path given ', (done) => {
     request(app.serve.bind(app))
@@ -32,6 +79,7 @@ describe('GET serveTodoList', () => {
       .get('/todoList')
       .set('Accept', '*/*')
       .expect(200)
+      .expect('[{"id":"todo-0","title":"Nothing","tasks":[{"taskTitle":"Nothing","id":"subTask-0","checked":true}]}]')
       .expect('Content-Type', 'application/json', done);
   });
 });
@@ -56,22 +104,11 @@ describe('PUT Method not allowed', () => {
   });
 });
 
-describe('POST add todo', () => {
-  it('should add todo to given path', (done) => {
+describe('POST delete subTask', () => {
+  it('should delete particular subtask', (done) => {
     request(app.serve.bind(app))
-
-      .post('/todo')
-      .send('{"titleText":"something"}')
-      .expect(201, done);
-  });
-});
-
-describe('POST add sub task', () => {
-  it('should add sub task to given path', (done) => {
-    request(app.serve.bind(app))
-
-      .post('/subTask')
-      .send('{"todoId":"subTask-1581334314307","titleText":"something"}')
+      .post('/deleteSubtask')
+      .send('{"todoId":"todo-0","subtaskId":"subTask-0"}')
       .expect(201, done);
   });
 });
@@ -81,7 +118,7 @@ describe('POST delete todo', () => {
     request(app.serve.bind(app))
 
       .post('/deleteTodo')
-      .send('{"todoId":"subTask-1581334314307"}')
+      .send('{"todoId":"todo-0"}')
       .expect(201, done);
   });
 });
