@@ -58,7 +58,7 @@ on window load =>load the page
 --DONE--need to remove date in the data_Structure
 --DONE--need to remove new dates from id 
 
-get rid of creating taskId and subtaskId again and again by making generic functions
+--DONE--get rid of creating taskId and subtaskId again and again by making generic functions
 
 
 remaining requirements:
@@ -71,8 +71,7 @@ handle =>
 client error:if status code is other than 200 or 201
 server error:if the content of post id n ot valid
 unit tests for the classes.
+--DONE--before deleting asking client/user confirm message
 ----------------------------
-
-
 
 

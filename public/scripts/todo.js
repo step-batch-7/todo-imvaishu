@@ -59,6 +59,10 @@ const addSubTask = function(){
 };
 
 const clearTask = function(id){
+  
+  if(!confirm('Are you sure, you want to delete?')){
+    return;
+  }
   const subtaskId = id.slice(6);
   const todo = selector('.selected');
   
@@ -69,6 +73,9 @@ const clearTask = function(id){
 };
 
 const clearTodo = function(id){ 
+  if(!confirm('Are you sure, you want to delete?')){
+    return;
+  }
   event.stopPropagation();
   const todoId = id.slice(7);
   selector('#todo-tasks').innerHTML = '';
