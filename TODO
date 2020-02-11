@@ -48,7 +48,7 @@ change color of border
 
 use required instead of if else in todo title
 
-on window load =>load the page 
+--DONE--on window load =>load the page 
 
 
 ------------------------------------------PAIRING STARTED------------------------------
@@ -73,5 +73,3 @@ server error:if the content of post id n ot valid
 unit tests for the classes.
 --DONE--before deleting asking client/user confirm message
 ----------------------------
-
-

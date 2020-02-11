@@ -126,3 +126,5 @@ const searchTitle = function(){
     }
   });
 };
+
+window.onload = updatePage();
