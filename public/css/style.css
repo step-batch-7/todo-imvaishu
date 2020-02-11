@@ -98,7 +98,7 @@ a{
   background-color: rgb(230, 229, 229);
 }
 
-#checkbox{
+.checkbox{
   height: 10px;
   width: 30px;
   cursor: pointer;

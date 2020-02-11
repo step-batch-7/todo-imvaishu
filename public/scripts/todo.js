@@ -28,16 +28,15 @@ const showTitle = function(){
   xhrPostRequest('todo', body, updatePage);
 };
 
-const renderTask = function(){
-  const title = event.target;
-
+const renderTask = function(id){
+  const title = document.querySelector(`#${id}`);
   const elements = document.querySelectorAll('.selected');
   elements.forEach((element) => {
     element.classList.remove('selected');
   });
   title.classList.add('selected');
 
-  loadTasks(title.id);
+  loadTasks(id);
 };
 
 const addSubTask = function(){
@@ -56,33 +55,28 @@ const addSubTask = function(){
   } );
 };
 
-const clearTask = function(){
-  const [,, task] = event.path;
+const clearTask = function(id){
+  const subtaskId = id.slice(6);
   const todo = document.querySelector('.selected');
-  const content = JSON.stringify({todoId: todo.id, subtaskId: task.id});
+  const content = JSON.stringify({todoId: todo.id, subtaskId});
 
   xhrPostRequest('deleteSubtask', content, function() {
     loadTasks(todo.id);
   });
 };
 
-const clearTodo = function(){ 
-  const [,, task] = event.path;
-  const todoId = task.id;
+const clearTodo = function(id){ 
   event.stopPropagation();
-
+  const todoId = id.slice(7);
   document.querySelector('#todo-tasks').innerHTML = '';
   const body = JSON.stringify({todoId});
   xhrPostRequest('deleteTodo', body, updatePage);
 };
 
-const updateStatus = function(){
-  const [,, subtask] = event.path;
-  const subtaskId = subtask.id;
-
-  const todo = document.querySelector('.selected');
-  const todoId = todo.id;
-  const status = event.target.checked;
+const updateStatus = function(id){
+  const subtaskId = id.slice(7);
+  const todoId = document.querySelector('.selected').id;
+  const status = document.querySelector(`#${id}`).checked;
   const content = JSON.stringify({todoId, subtaskId, status});
 
   xhrPostRequest('updateStatus', content, function() {
@@ -90,21 +84,17 @@ const updateStatus = function(){
   });
 };
 
-const editTodoTitle = function(){
-  event.stopPropagation();
-  const [,, title] = event.path;
-  const titleId = title.id;
-  const titleText = event.target.innerText;
-
+const editTodoTitle = function(id){
+  const titleText = document.querySelector(`#${id}`).innerText;
+  const titleId = id.slice(6);
   const content = JSON.stringify({titleId, titleText});
   xhrPostRequest('editTitle', content, updatePage);
 };
 
-const editSubtask = function(){
-  const [,, subtask] = event.path;
-  const subtaskId = subtask.id;
+const editSubtask = function(id){
+  const subtaskId = id.slice(10);
   const todo = document.querySelector('.selected');
-  const titleText = event.target.innerText;
+  const titleText = document.querySelector(`#${id}`).innerText;
 
   const content = JSON.stringify({todoId: todo.id, subtaskId, titleText});
   xhrPostRequest('editSubtask', content, function(){
