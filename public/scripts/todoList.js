@@ -3,7 +3,7 @@ const subTaskHtml = function(task, id){
   return `
   <div class="subTask" id="${task.id}">
     <div class="task">
-      <input type="checkbox" ${status} class="checkbox"
+      <input type="checkbox" ${status}
         onclick="updateStatus('status-${task.id}-${id}')" id="status-${task.id}-${id}"/>
       <label contentEditable="true" onblur="editSubtask('taskTitle-${task.id}-${id}')" 
         id="taskTitle-${task.id}-${id}">${task.taskTitle}</label>

@@ -1,24 +1,11 @@
-body{
-  font-family: sans-serif;
-  font-weight: 300; 
-}
-
-img{
-  height: 50px;
-  width: 50px;
-}
-
-input{
+input,button,#option{
   outline: none;
 }
 
 span{
+  font-family: sans-serif;
   font-size: 50px;
-}
-
-.heading{
-  display: flex;
-  justify-content: space-between;
+  font-weight: 300;
 }
 
 #search-title{
@@ -38,39 +25,27 @@ span{
   width: 30px;
 }
 
-.container{
-  height: 700px;
-  width: 100%;
-  border-top: 3px solid whitesmoke;
-  display: flex;
+.subTask-title,
+#todo-title{
+  height: 40px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .subTask-title{
   width: 352px;
-  height: 40px;
-  font-size: 20px;
-  font-weight: 300;
 }
 
 #todo-title{
   width: 280px;
-  height: 40px;
-  font-size: 20px;
-  font-weight: 300;
 }
 
 button{
- width: 55px;
- outline: none;
  height: 45px;
 }
 
 .title-box,
 .title{
-  margin-top: 3px;
-  height:35px;
-  border-radius: 4px;
-  border: none;
   display: flex;
   justify-content: space-between
 }
@@ -85,7 +60,7 @@ button{
 }
 
 .block-container{
-  width: 430px;
+  width: 400px;
   height: 400px;
   overflow: scroll;
   margin: 20px;
@@ -98,10 +73,13 @@ button{
   font-size: 20px;
   line-height: 3;
   font-family: sans-serif;
-  align-items: center;
   display: flex;
   justify-content: space-between;
   padding-left: 10px;
+}
+
+.subTask{
+  border-bottom: 1px solid lightblue;
 }
 
 a{
@@ -110,24 +88,17 @@ a{
 
 .title-box,
 .subTask{
-  width: 400px;
+  width: 390px;
 }
 
 #option{
   width:70px;
   height: 30px;
   font-size: 20px;
-  outline: none;
   font-weight: 400px;
 }
 
 .todo-container{
   display: flex;
   justify-content: space-between;
-}
-
-.checkbox{
-  height: 10px;
-  width: 30px;
-  cursor: pointer;
 }
