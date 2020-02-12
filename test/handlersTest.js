@@ -122,3 +122,13 @@ describe('POST delete todo', () => {
       .expect(201, done);
   });
 });
+
+describe('POST bad request', () => {
+  it('should give bad request if the fields not given', (done) => {
+    request(app.serve.bind(app))
+
+      .post('/deleteTodo')
+      .send('{"todd":"todo_1"}')
+      .expect(400, done);
+  });
+});
