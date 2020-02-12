@@ -113,6 +113,14 @@ a{
   width: 400px;
 }
 
+#option{
+  width:70px;
+  height: 30px;
+  font-size: 20px;
+  outline: none;
+  font-weight: 400px;
+}
+
 .todo-container{
   display: flex;
   justify-content: space-between;

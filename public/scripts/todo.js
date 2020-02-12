@@ -79,6 +79,8 @@ const editSubtask = function(id){
   xhrPostRequest('editSubtask', content, loadTasks);
 };
 
+const search = () => selector('#option').value === 'title' ? searchTitle() : searchTask();
+
 const searchTitle = function(){
   const searchText = selector('#search-title').value;
   const [todoList] = new Array(document.querySelectorAll('.block-container'));
@@ -89,6 +91,21 @@ const searchTitle = function(){
     const title = todo.children[0].innerText;
     if(title.includes(searchText)){
       todo.style.display = 'block';
+    }
+  });
+};
+
+const searchTask = function(){
+  const searchText = selector('#search-title').value;
+  const [todoList] = new Array(document.querySelectorAll('.block-container'));
+  todoList.forEach((todo) => {
+    todo.style.display = 'none';
+  }); 
+  const subTasks = new Array(document.querySelectorAll('.subTask'));
+  subTasks[0].forEach((task) => {
+    const title = task.innerText;
+    if(title.includes(searchText)){
+      task.parentElement.style.display = 'block';
     }
   });
 };
