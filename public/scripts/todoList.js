@@ -1,22 +1,22 @@
-const subTaskHtml = function(task){
+const subTaskHtml = function(task, id){
   const status = task.checked ? 'checked' : '';
   return `
   <div class="subTask" id="${task.id}">
     <div class="task">
       <input type="checkbox" ${status} class="checkbox"
-        onclick="updateStatus('status-${task.id}')" id="status-${task.id}"/>
-      <label contentEditable="true" onblur="editSubtask('taskTitle-${task.id}')" 
-        id="taskTitle-${task.id}">${task.taskTitle}</label>
+        onclick="updateStatus('status-${task.id}-${id}')" id="status-${task.id}-${id}"/>
+      <label contentEditable="true" onblur="editSubtask('taskTitle-${task.id}-${id}')" 
+        id="taskTitle-${task.id}-${id}">${task.taskTitle}</label>
     </div>
     <div>
-      <a onclick="clearTask('clear-${task.id}')" id="clear-${task.id}"> <img src="images/remove.png" class="remove"/></a>
+      <a onclick="clearTask('clear-${task.id}-${id}')" id="clear-${task.id}"> <img src="images/remove.png" class="remove"/></a>
     </div>
   </div>`;
 };
 
 const updateTitleToHtml = function(todo){
   return `
-  <div class="todo" onclick="renderTask('${todo.id}')" id=${todo.id} >
+  <div class="todo" id=${todo.id}>
     <div class="title-block">
       <label contentEditable="true" 
         onblur="editTodoTitle('title-${todo.id}')" id="title-${todo.id}">${todo.title}
@@ -25,7 +25,17 @@ const updateTitleToHtml = function(todo){
     <a onclick="clearTodo('remove-${todo.id}');" id="remove-${todo.id}" > 
       <img src="images/remove.png" class="remove"/>
     </a>
-  </div>`;
+  </div>
+  <div class= "title-box">
+      <div>
+        <input class="subTask-title" id="addTask-${todo.id}" type="text" placeholder = "Your Subtask">
+      </div>
+      <div>
+        <button onclick="addSubTask('addTask-${todo.id}');"  >
+        <img src="images/add.png" class="add"/></button>
+      </div>
+    </div>
+    `;
 };
 
 class TodoList{
@@ -43,21 +53,9 @@ class TodoList{
     return reverseContent.map(updateTitleToHtml).join('');
   }
 
-  tasksToHtml(id){
-    const todo = this.todoList.find((todo) => todo.id === id);
-    const htmlForTasks = `
-    <div class= "title-box">
-      <div>
-        <input id="subTask-title" type="text" placeholder = "Your Subtask">
-      </div>
-      <div>
-        <button onclick="addSubTask();" id="create-button" >
-        <img src="images/add.png" class="add"/></button>
-      </div>
-    </div>
-    `;
-    const html = todo.tasks ? todo.tasks.map((task) => subTaskHtml(task)).join('') : '';
-
-    return htmlForTasks + html;
+  tasksToHtml(){
+    return this.todoList.map((todo) => 
+      '<div class="block-container">' + updateTitleToHtml(todo) + todo.tasks.map(task => subTaskHtml(task, todo.id)).join('') + '</div>'
+    ).join('');
   }
 }

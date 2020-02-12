@@ -8,9 +8,14 @@ img{
   width: 50px;
 }
 
-#topTitle{
+input{
+  outline: none;
+}
+
+span{
   font-size: 50px;
 }
+
 .heading{
   display: flex;
   justify-content: space-between;
@@ -40,9 +45,15 @@ img{
   display: flex;
 }
 
-#todo-title,
-#subTask-title{
-  width: 370px;
+.subTask-title{
+  width: 352px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#todo-title{
+  width: 280px;
   height: 40px;
   font-size: 20px;
   font-weight: 300;
@@ -50,10 +61,8 @@ img{
 
 button{
  width: 55px;
-}
-
-#create-button{
-  height: 45px;
+ outline: none;
+ height: 45px;
 }
 
 .title-box,
@@ -66,16 +75,21 @@ button{
   justify-content: space-between
 }
 
-.todo-container{
+#todo-tasks{
+  width: 100%;
+  height: 900px;
   overflow: scroll;
-  width: 450px;
-  height: 700px;
-  border-right: 2px solid whitesmoke;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.subtask-container{
+.block-container{
+  width: 430px;
+  height: 400px;
   overflow: scroll;
-  width: 900px;
+  margin: 20px;
+  border: 1px solid lightblue;
 }
 
 .todo,
@@ -84,14 +98,10 @@ button{
   font-size: 20px;
   line-height: 3;
   font-family: sans-serif;
-  overflow: scroll;
-  margin-bottom: 20px;
-  border: none;
-  background-color: rgb(250, 250, 250);
-  margin-top: 10px;
   align-items: center;
   display: flex;
   justify-content: space-between;
+  padding-left: 10px;
 }
 
 a{
@@ -100,12 +110,12 @@ a{
 
 .title-box,
 .subTask{
-  margin-left: 200px;
-  width: 450px;
+  width: 400px;
 }
 
-.selected{
-  background-color: rgb(230, 229, 229);
+.todo-container{
+  display: flex;
+  justify-content: space-between;
 }
 
 .checkbox{

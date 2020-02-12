@@ -7,20 +7,13 @@ const transferorTitle = function(id, html){
   element.innerHTML = html;
 };
 
-const loadTasks = function(id){
+const loadTasks = function(){
   xhrGetRequest('todoList', (responseText) => {
     const todoList = TodoList.load(responseText);
-    transferorTitle('#todo-tasks', todoList.tasksToHtml(id));
+    transferorTitle('#todo-tasks', todoList.tasksToHtml());
   });
 };
 
-const updatePage = function(){
-  xhrGetRequest('todoList', (responseText) => {
-    const todoList = TodoList.load(responseText);
-    transferorTitle('#todo-items', todoList.titleToHtml());
-  });
-};
- 
 const showTitle = function(){
   const todoTitle = selector('#todo-title');
   const titleText = todoTitle.value;
@@ -29,102 +22,75 @@ const showTitle = function(){
   }
   todoTitle.value = '';
   const body = JSON.stringify({titleText});
-  xhrPostRequest('todo', body, updatePage);
+  xhrPostRequest('todo', body, loadTasks);
 };
 
-const renderTask = function(id){
-  const title = selector(`#${id}`);
-  const elements = document.querySelectorAll('.selected');
-  elements.forEach((element) => {
-    element.classList.remove('selected');
-  });
-  title.classList.add('selected');
-
-  loadTasks(id);
-};
-
-const addSubTask = function(){
-  const subTaskTitle = selector('#subTask-title');
+const addSubTask = function(id){
+  const subTaskTitle = selector(`#${id}`);
   const titleText = subTaskTitle.value;
   if(titleText === ''){
     return alert('Please Enter subTask..' );
   }
   subTaskTitle.value = '';
-  const todoId = selector('.selected').id;
-
+  const [, element] = id.split('-');
+  const todoId = selector(`#${element}`).id;
   const content = JSON.stringify({todoId, titleText});
-  xhrPostRequest('subTask', content, function() {
-    loadTasks(todoId);
-  } );
+  xhrPostRequest('subTask', content, loadTasks);
 };
 
 const clearTask = function(id){
-  
   if(!confirm('Are you sure, you want to delete?')){
     return;
   }
-  const subtaskId = id.slice(6);
-  const todo = selector('.selected');
-  
-  const content = JSON.stringify({todoId: todo.id, subtaskId});
-  xhrPostRequest('deleteSubtask', content, function() {
-    loadTasks(todo.id);
-  });
+  const [, subtaskId, todoId] = id.split('-');
+  const content = JSON.stringify({todoId, subtaskId});
+  xhrPostRequest('deleteSubtask', content, loadTasks);
 };
 
 const clearTodo = function(id){ 
   if(!confirm('Are you sure, you want to delete?')){
     return;
   }
-  event.stopPropagation();
-  const todoId = id.slice(7);
+  const [, todoId] = id.split('-');
   selector('#todo-tasks').innerHTML = '';
   const body = JSON.stringify({todoId});
-  xhrPostRequest('deleteTodo', body, updatePage);
+  xhrPostRequest('deleteTodo', body, loadTasks);
 };
 
 const updateStatus = function(id){
-  const subtaskId = id.slice(7);
-  const todoId = selector('.selected').id;
+  const[, subtaskId, todoId] = id.split('-');
   const status = selector(`#${id}`).checked;
   const content = JSON.stringify({todoId, subtaskId, status});
-
-  xhrPostRequest('updateStatus', content, function() {
-    loadTasks(todoId);
-  });
+  xhrPostRequest('updateStatus', content, loadTasks);
 };
 
 const editTodoTitle = function(id){
-  selector('#todo-tasks').innerHTML = '';
   const titleText = selector(`#${id}`).innerText;
-  const titleId = id.slice(6);
+  const [, titleId] = id.split('-');
   const content = JSON.stringify({titleId, titleText});
-  xhrPostRequest('editTitle', content, updatePage);
+  xhrPostRequest('editTitle', content, loadTasks);
 };
 
 const editSubtask = function(id){
-  const subtaskId = id.slice(10);
-  const todo = selector('.selected');
+  const [, subtaskId, todoId] = id.split('-');
   const titleText = selector(`#${id}`).innerText;
 
-  const content = JSON.stringify({todoId: todo.id, subtaskId, titleText});
-  xhrPostRequest('editSubtask', content, function(){
-    loadTasks(todo.id);
-  });
+  const content = JSON.stringify({todoId, subtaskId, titleText});
+  xhrPostRequest('editSubtask', content, loadTasks);
 };
 
 const searchTitle = function(){
-  const searchText = event.target.value;
-  const [todoList] = new Array(document.querySelectorAll('.todo'));
+  const searchText = selector('#search-title').value;
+  const [todoList] = new Array(document.querySelectorAll('.block-container'));
   todoList.forEach((todo) => {
     todo.style.display = 'none';
   });
   todoList.forEach((todo) => {
     const title = todo.children[0].innerText;
     if(title.includes(searchText)){
-      todo.style.display = 'flex';
+      todo.style.display = 'bloc';
     }
   });
 };
 
-window.onload = updatePage();
+window.onload = loadTasks();

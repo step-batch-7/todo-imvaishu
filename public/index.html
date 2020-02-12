@@ -10,24 +10,16 @@
 </head>
 
 <body>
-  <div class="heading">
-    <div><img src="images/notepad.png"><span id="topTitle">TODO</span></div>
-    <div><input oninput="searchTitle();" id="search-title" type="text" placeholder="Search TODO here"></div>
-  </div>
-  <div class="container">
-    <div class="todo-container">
-      <div class="title">
-        <div>
-          <input id="todo-title" type="text" placeholder="Your TODO">
-        </div>
-        <div>
-          <button id="create-button" onclick="showTitle()"> <img src="images/add.png" class="add"></button>
-        </div>
-      </div>
-      <div id="todo-items"></div>
+  <div class="todo-container">
+    <div class="title">
+      <input id="todo-title" type="text" placeholder="Your TODO">
+      <button id="create-button" onclick="showTitle()"> <img src="images/add.png" class="add"></button>
     </div>
-    <div id="todo-tasks"></div>
+    <span>TODO</span>
+    <input oninput="searchTitle();" id="search-title" type="text" placeholder="Search TODO here">
   </div>
+  <hr>
+  <div id="todo-tasks"></div>
 </body>
 
 </html>
