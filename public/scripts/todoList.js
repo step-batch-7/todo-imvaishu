@@ -9,8 +9,7 @@ const subTaskHtml = function(task){
         id="taskTitle-${task.id}">${task.taskTitle}</label>
     </div>
     <div>
-      <a onclick="clearTask('clear-${task.id}')" id="clear-${task.id}"></a>
-      <img src="images/remove.png" class="remove"/>
+      <a onclick="clearTask('clear-${task.id}')" id="clear-${task.id}"> <img src="images/remove.png" class="remove"/></a>
     </div>
   </div>`;
 };
