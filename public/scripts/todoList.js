@@ -2,23 +2,30 @@ const subTaskHtml = function(task){
   const status = task.checked ? 'checked' : '';
   return `
   <div class="subTask" id="${task.id}">
-    <div class="task"><input type="checkbox" ${status} class="checkbox"
-    onclick="updateStatus('status-${task.id}')" id="status-${task.id}">
-    <label contentEditable="true" onblur="editSubtask('taskTitle-${task.id}')" 
-    id="taskTitle-${task.id}">${task.taskTitle}</label></div>
-   <div> <a onclick="clearTask('clear-${task.id}')" id="clear-${task.id}"
-    <i class="material-icons">clear</i></a></div>
+    <div class="task">
+      <input type="checkbox" ${status} class="checkbox"
+        onclick="updateStatus('status-${task.id}')" id="status-${task.id}"/>
+      <label contentEditable="true" onblur="editSubtask('taskTitle-${task.id}')" 
+        id="taskTitle-${task.id}">${task.taskTitle}</label>
+    </div>
+    <div>
+      <a onclick="clearTask('clear-${task.id}')" id="clear-${task.id}"></a>
+      <img src="images/remove.png" class="remove"/>
+    </div>
   </div>`;
 };
 
 const updateTitleToHtml = function(todo){
   return `
   <div class="todo" onclick="renderTask('${todo.id}')" id=${todo.id} >
-  <div class="title-block">
-  <label contentEditable="true" 
-  onblur="editTodoTitle('title-${todo.id}')" id="title-${todo.id}">${todo.title}</label></div>
-  <a onclick="clearTodo('remove-${todo.id}');" id="remove-${todo.id}" > 
-    <i class="material-icons">remove</i></a>
+    <div class="title-block">
+      <label contentEditable="true" 
+        onblur="editTodoTitle('title-${todo.id}')" id="title-${todo.id}">${todo.title}
+      </label>
+    </div>
+    <a onclick="clearTodo('remove-${todo.id}');" id="remove-${todo.id}" > 
+      <img src="images/remove.png" class="remove"/>
+    </a>
   </div>`;
 };
 
@@ -45,8 +52,8 @@ class TodoList{
         <input id="subTask-title" type="text" placeholder = "Your Subtask">
       </div>
       <div>
-        <button onclick="addSubTask();" id="create-button" 
-        <i class="material-icons">add</i></button>
+        <button onclick="addSubTask();" id="create-button" >
+        <img src="images/add.png" class="add"/></button>
       </div>
     </div>
     `;

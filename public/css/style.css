@@ -23,6 +23,16 @@ img{
   font-weight: 300;
 }
 
+.remove{
+  height: 15px;
+  width:20px
+}
+
+.add{
+  height: 30px;
+  width: 30px;
+}
+
 .container{
   height: 700px;
   width: 100%;
