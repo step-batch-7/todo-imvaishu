@@ -88,7 +88,7 @@ const searchTitle = function(){
   todoList.forEach((todo) => {
     const title = todo.children[0].innerText;
     if(title.includes(searchText)){
-      todo.style.display = 'bloc';
+      todo.style.display = 'block';
     }
   });
 };
