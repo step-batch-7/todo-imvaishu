@@ -17,7 +17,7 @@ describe('POST add sub task', () => {
     request(app.serve.bind(app))
 
       .post('/subTask')
-      .send('{"todoId":"todo-1","titleText":"something"}')
+      .send('{"todoId":"todo_1","titleText":"something"}')
       .expect(201, done);
   });
 });
@@ -26,7 +26,7 @@ describe('POST update subtask status', () => {
   it('should update status of particular subtask', (done) => {
     request(app.serve.bind(app))
       .post('/updateStatus')
-      .send('{"todoId":"todo-1","subtaskId":"subTask-0","status":true}')
+      .send('{"todoId":"todo_1","subtaskId":"subTask_0","status":true}')
       .expect(201, done);
   });
 });
@@ -35,7 +35,7 @@ describe('POST edit title', () => {
   it('should edit title of particular todo', (done) => {
     request(app.serve.bind(app))
       .post('/editTitle')
-      .send('{"titleId":"todo-1","titleText":"Nothing"}')
+      .send('{"titleId":"todo_1","titleText":"Nothing"}')
       .expect(201, done);
   });
 });
@@ -44,7 +44,7 @@ describe('POST edit subtask title', () => {
   it('should edit title of particular subtask', (done) => {
     request(app.serve.bind(app))
       .post('/editSubtask')
-      .send('{"todoId":"todo-1","subtaskId":"subTask-1","titleText":"Nothing"}')
+      .send('{"todoId":"todo_1","subtaskId":"subTask_1","titleText":"Nothing"}')
       .expect(201, done);
   });
 });
@@ -79,7 +79,7 @@ describe('GET serveTodoList', () => {
       .get('/todoList')
       .set('Accept', '*/*')
       .expect(200)
-      .expect('[{"id":"todo-1","title":"Nothing","tasks":[{"taskTitle":"Nothing","id":"subTask-1","checked":false}]}]')
+      .expect('[{"id":"todo_1","title":"Nothing","tasks":[{"taskTitle":"Nothing","id":"subTask_1","checked":false}]}]')
       .expect('Content-Type', 'application/json', done);
   });
 });
@@ -108,7 +108,7 @@ describe('POST delete subTask', () => {
   it('should delete particular subtask', (done) => {
     request(app.serve.bind(app))
       .post('/deleteSubtask')
-      .send('{"todoId":"todo-1","subtaskId":"subTask-1"}')
+      .send('{"todoId":"todo_1","subtaskId":"subTask_1"}')
       .expect(201, done);
   });
 });
@@ -118,7 +118,7 @@ describe('POST delete todo', () => {
     request(app.serve.bind(app))
 
       .post('/deleteTodo')
-      .send('{"todoId":"todo-1"}')
+      .send('{"todoId":"todo_1"}')
       .expect(201, done);
   });
 });
