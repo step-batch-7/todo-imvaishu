@@ -16,11 +16,12 @@ span{
 }
 
 .remove{
-  height: 15px;
-  width:20px
+  padding-top: 15px;
+  padding-right: 5px;
 }
 
-.add{
+.add,
+.remove{
   height: 30px;
   width: 30px;
 }
