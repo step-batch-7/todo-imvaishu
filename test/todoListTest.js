@@ -62,18 +62,18 @@ describe('editTitle', () => {
   });
 });
 
-describe('removeTask', () => {
+describe('removeTodo', () => {
   it('should remove todo if the todo is there in todoList', () => {
     const content = '[{"id":"todo_1","title":"something","tasks":[]}]';
     const todoList = TodoList.load(content);
-    const actual = todoList.removeTask('todo_1');
+    const actual = todoList.removeTodo('todo_1');
     assert.ok(actual);
   });
 
   it('should not remove any todo if todo is not there', () => {
     const content = '[{"id":"todo_1","title":"something","tasks":[]}]';
     const todoList = TodoList.load(content);
-    const actual = todoList.removeTask('todo_2');
+    const actual = todoList.removeTodo('todo_2');
     assert.ok(!actual);
   });
 });
