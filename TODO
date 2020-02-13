@@ -63,13 +63,13 @@ use required instead of if else in todo title
 
 remaining requirements:
 --DONE--1)search by title
-2)search by task
+--DONE--2)search by task
 3)login and sign up page;
 
 ----------------------------------
 handle =>
 --DONE--client error:if status code is other than 200 or 201
-server error:if the content of post id n ot valid
-unit tests for the classes.
+--DONE--server error:if the content of post id n ot valid
+--DONE--unit tests for the classes.
 --DONE--before deleting asking client/user confirm message
 ----------------------------
