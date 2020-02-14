@@ -78,13 +78,24 @@ describe('POST edit subtask title', () => {
 });
 
 describe('GET home page', () => {
-  it('should get index.html / path given ', done => {
+  it('should get homepage for /homepage.html path given ', done => {
+    request(app)
+      .get('/homepage.html')
+      .set('Accept', '*/*')
+      .expect(200)
+      .expect('Content-Type', 'text/html; charset=UTF-8', done)
+      .expect(/<title>TODO APP<\/title>/);
+  });
+});
+
+describe('GET login page', () => {
+  it('should get index.html for / path given ', done => {
     request(app)
       .get('/')
       .set('Accept', '*/*')
       .expect(200)
       .expect('Content-Type', 'text/html; charset=UTF-8', done)
-      .expect(/<title>TODO APP<\/title>/);
+      .expect(/type="password"/);
   });
 });
 

@@ -1,0 +1,48 @@
+body {
+  font-family: sans-serif;
+}
+
+#login {
+  width: 350px;
+  height: 400px;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-image: initial;
+  border-radius: 15px;
+}
+
+label {
+  padding-left: 10px;
+}
+
+input {
+  margin-bottom: 20px;
+  font-size: 20px;
+  outline: none;
+}
+
+.choice {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+#userImg {
+  width: 200px;
+  height: 200px;
+  margin-left: 75px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
