@@ -1,3 +1,8 @@
-const { app } = require('./lib/handlers');
+const { app } = require('./lib/routers');
 const PORT = 4000;
-app.listen(PORT, () => console.log('listening', PORT));
+
+const main = function(){
+  app.listen(PORT, () => process.stdout.write('listening', PORT));
+};
+
+main();

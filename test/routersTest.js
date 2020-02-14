@@ -1,6 +1,6 @@
 const request = require('supertest');
 
-const { app } = require('../lib/handlers');
+const { app } = require('../lib/routers');
 
 describe('POST add todo', () => {
   it('should add todo to given path', done => {
