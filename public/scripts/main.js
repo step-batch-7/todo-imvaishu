@@ -14,7 +14,7 @@ const loadTasks = function(){
   });
 };
 
-const showTitle = function(){
+const renderTask = function(){
   const todoTitle = selector('#todo-title');
   const titleText = todoTitle.value;
   if(titleText === ''){
