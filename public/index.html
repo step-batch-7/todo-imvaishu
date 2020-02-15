@@ -1,31 +1,24 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login</title>
-  <link rel="stylesheet" href="css/login.css">
-  <script src="scripts/login.js"></script>
+  <title>signUp</title>
+  <script src="scripts/signUp.js"></script>
+  <script src="scripts/requests.js"></script>
 </head>
 
 <body>
-  <div id="login">
-    <div class="userInfo">
-      <img src="images/user.png" id="userImg">
-      <label for="userName">User Name :
-        <input type="text" name="userName" id="userName" placeholder="Your Name">
-      </label>
-      <label for="password">Password :
-        <input type="password" name="password" id="password" placeholder="password">
-      </label>
-    </div>
-    <div class="choice">
-      <input type="button" value="login" onclick="login()">
-      <input type="button" value="signUp">
-    </div>
+  <div>
+    userName <input type="text" name="userName" id="userName">
+    <br>
+    password <input type="password" name="password" id="password">
+    <br>
+    confirmPassword <input type="password" name="confirmPassword" id="confirmPassword">
+    <br>
+    <button onclick="saveAndProceed()">SignUp</button>
   </div>
-
-
 </body>
 
 </html>

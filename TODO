@@ -75,3 +75,11 @@ handle =>
 ----------------------------
 --DONE--change file names
 --DONE--convert from http to express
+
+
+-----------------------------------
+need to write signup page
+  then should be able to store the user details
+need to write login page
+need to toggle between login and signup pages
+need to change new array to array.from
