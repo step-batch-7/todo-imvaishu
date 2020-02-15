@@ -15,3 +15,13 @@ const saveAndProceed = function(){
   const content = JSON.stringify({userName, password});
   xhrPostRequest('newUser', content, () => {});
 };
+
+const signUp = function () {
+  document.querySelector('.signUp').style.display = 'flex';
+  document.querySelector('#login').style.display = 'none';
+};
+
+const showLogin = function(){
+  document.querySelector('.signUp').style.display = 'none';
+  document.querySelector('#login').style.display = 'flex';
+};
