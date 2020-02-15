@@ -13,7 +13,11 @@ const saveAndProceed = function(){
     return;
   }
   const content = JSON.stringify({userName, password});
-  xhrPostRequest('newUser', content, () => {});
+  xhrPostRequest('newUser', content, (text) => {
+    const message = document.querySelector('.status');
+    message.innerHTML = `<p>${text} : with this Username ${userName}</p>`;
+    message.style.display = 'block';
+  });
 };
 
 const signUp = function () {

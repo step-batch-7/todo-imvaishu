@@ -28,7 +28,7 @@ input {
   outline: none;
 }
  button{
-   width: 40px;
+   width: 50px;
    height: 30px;
    text-align: center;
    margin-left: 150px;
@@ -62,4 +62,10 @@ input {
   border-image: initial;
   border-radius: 15px;
   padding: 10px;
+}
+
+.status{
+  display: none;
+  text-align: center;
+  color: red;
 }

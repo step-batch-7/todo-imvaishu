@@ -16,7 +16,9 @@ const xhrPostRequest = function(url, body, callback){
   req.onload = function(){
     if(this.status === 201){
       callback();
-    }else {  
+    } else if(this.status === 200){
+      callback(this.responseText);
+    } else {  
       alert('Error', this.statusText); 
     } 
   };
