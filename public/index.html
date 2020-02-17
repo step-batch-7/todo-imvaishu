@@ -2,45 +2,62 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TODO APP</title>
+  <link rel="stylesheet" href="css/todo.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <script src="scripts/signUp.js"></script>
   <script src="scripts/requests.js"></script>
-  <link rel="stylesheet" href="css/login.css" />
 </head>
 
 <body>
-  <div class="signUp">
-    <label for="userName">
-      userName <input type="text" name="userName" id="userName" required /></label>
-    <br />
-    <label for="password">
-      password <input type="password" name="password" id="password" required /></label>
-    <br />
-    <label for="confirmPassword">confirm password
-      <input type="password" name="confirmPassword" id="confirmPassword" required /></label>
-    <br />
-    <button onclick="saveAndProceed()">Submit</button>
-    <p>
-      Already have an account? <a href="" onclick="showLogin()">Login here</a>
+  <div class="container">
+    <h1>MAKE YOUR NOTES</h1>
+    <div class="option">
+      <a onclick="signUp()" id="creteAccBtn">Create-Account<i class="fas fa-user-plus"
+          style="color:whitesmoke; padding-right: 10px;" id="symbol"></i></a>
+    </div>
+    <br>
+    <div class="option">
+      <a onclick="showLogin()" id="creteAccBtn">Login<i class="fas fa-sign-in-alt"
+          style="color:whitesmoke; padding-right: 10px;" id="symbol"></i></a>
+    </div>
+    <p id="info">
+      We all have those days when there are a million things to do, and we don't know how we're going to get it all
+      done. It's easy to become overwhelmed by the vast quantity of tasks that we must do from day to day. Sometimes we
+      have so many balls in the air, that we may even lose track of some loose ends and forget to do important things.
+      When we get too busy, we end up feeling like we are barely able to keep our heads above water.use Todo when you
+      have a deadline, NEED to focus, prioritize and get things done quickly
     </p>
   </div>
-  <div class="status"></div>
-  <div id="login">
-    <form action="/home" method="post">
-      <div class="userInfo">
-        <img src="images/user.png" id="userImg" />
-        <label for="userName">User Name :
-          <input type="text" name="userName" class="userName" placeholder="Your Name" />
-        </label>
-        <label for="password">Password :
+  <div class="accounts">
+    <div class="signUp">
+      <label for="userName">userName :</label>
+      <input type="text" name="userName" id="userName" autocomplete="off" />
+      <label for=" password">password : </label>
+      <input type="password" name="password" id="password" />
+      <label for="confirmPassword">confirm password :</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" />
+      <button onclick="saveAndProceed()">Submit</button>
+      <p>
+        Already have an account? <a onclick="showLogin()"> <u> Login here </u></a>
+      </p>
+    </div>
+    <div class="status"></div>
+    <div id="login">
+      <form action="/home" method="post">
+        <div class="userInfo">
+          <img src="./images/login.png" id="userImg">
+          <label for="userName">User Name :</label>
+          <input type="text" name="userName" class="userName" placeholder="Your Name" autocomplete="off" />
+          <label for="password">Password :</label>
           <input type="password" name="password" class="password" placeholder="password" />
-        </label>
-      </div>
-      <button class="choices" type="submit">Login</button>
-      <p>Don't have an account?<a onclick="signUp()"> create account</a></p>
-    </form>
+        </div>
+        <button class="choices" type="submit">Login</button>
+        <p>Don't have an account?<a onclick="signUp()"> <u>create account</u> </a></p>
+      </form>
+    </div>
   </div>
 </body>
 

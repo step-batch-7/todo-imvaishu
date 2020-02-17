@@ -90,6 +90,6 @@ handle =>
 give message if any username or password  are incorrect in login page
 --DONE--on sign up page it should check whether user filled all required details or not
 
-for cookie have to give session id's instead of username
+--DONE--for cookie have to give session id's instead of username
 css
 password should not be store as it is.

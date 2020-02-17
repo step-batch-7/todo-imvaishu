@@ -1,14 +1,61 @@
-body {
-  font-family: sans-serif;
+body{
+  background-image: url('../images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: 300;
+}
+
+.option{
+  margin-top: 30px;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid rgb(253, 106, 106);
+  border-top: 5px solid transparent;
+  height: 3px;
+  width: 240px;
+  background-color: rgba(184, 184, 184, 0.8);
+  margin-left:20px;
+  padding-bottom: 20px;
+  line-height: 20px;
+}
+
+#info{
+font-size: 30px;
+}
+
+.container{
+  width: 700px;
+}
+
+p{
+  margin-top: 60px;
+}
+
+#userSymbol{
+  margin-left: 100px;
+}
+
+#creteAccBtn{
+  font-size: 25px;
+ padding-left: 10px;
+}
+
+#symbol{
+padding-left: 10px;
+}
+
+.accounts{
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 #login {
   width: 350px;
-  height: 440px;
+  height: 400px;
   position: absolute;
   top: 25%;
-  left: 40%;
-  display: flex;
+  left: 35%;
+  display: none;
   justify-content: space-between;
   flex-direction: column;
   border-width: 1px;
@@ -16,6 +63,7 @@ body {
   border-color: black;
   border-image: initial;
   border-radius: 15px;
+  padding: 10px;
 }
 
 p{
@@ -30,7 +78,9 @@ input {
   margin-bottom: 20px;
   font-size: 20px;
   outline: none;
+  padding-left: 10px;
 }
+
  button{
    width: 50px;
    height: 30px;
@@ -44,11 +94,12 @@ input {
 }
 
 #userImg {
-  width: 200px;
-  height: 200px;
-  margin-left: 75px;
+  width: 100px;
+  height: 100px;
+  margin-left: 120px;
   padding-top: 20px;
   padding-bottom: 40px;
+  opacity: 0.7;
 }
 
 .signUp {
@@ -56,7 +107,7 @@ input {
   height: 400px;
   position: absolute;
   top: 25%;
-  left: 40%;
+  left: 35%;
   display: none;
   justify-content: space-between;
   flex-direction: column;
