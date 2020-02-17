@@ -3,29 +3,35 @@
 
 <head>
   <title>TODO APP</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
   <script src="scripts/requests.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/todoListCollection.js"></script>
 </head>
 
 <body>
+  <h1>
+    TODO
+    <span>
+      <a href="/logout" style=""><strong>LOGOUT</strong></a>
+    </span>
+  </h1>
   <div class="todo-container">
     <div class="title">
-      <input id="todo-title" type="text" placeholder="Your TODO">
-      <button id="create-button" onclick="renderTask()"> <img src="images/add.png" class="add"></button>
+      <input id="todo-title" type="text" placeholder="Your TODO" />
+      <button id="create-button" onclick="renderTask()">
+        <img src="images/add.png" class="add" />
+      </button>
     </div>
-    <span>TODO</span>
     <div>
       <select id="option">
         <option>title</option>
         <option>task</option>
       </select>
-      <input oninput="search();" id="search-title" type="text" placeholder="Search TODO here">
-      <a href="/logout"><strong>LOGOUT</strong></a>
+      <input oninput="search();" id="search-title" type="text" placeholder="Search TODO here" />
     </div>
   </div>
-  <hr>
+  <hr />
   <div id="todo-tasks"></div>
 </body>
 
