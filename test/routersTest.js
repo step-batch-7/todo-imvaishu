@@ -1,5 +1,6 @@
 const request = require('supertest');
 const { app } = require('../lib/routers');
+
 describe('POST signup', () => {
   it('should save the new details of the user', function(done) {
     request(app)
@@ -8,6 +9,7 @@ describe('POST signup', () => {
       .expect(200, done);
   });
 });
+
 describe('POST showHomePage', () => {
   it('should give the homepage if the user is signed in ', function(done) {
     request(app)
@@ -16,6 +18,7 @@ describe('POST showHomePage', () => {
       .expect(302, done);
   });
 });
+
 describe('POST add todo', () => {
   it('should add todo to given path', done => {
     request(app)
@@ -32,6 +35,7 @@ describe('POST add todo', () => {
       .expect(400, done);
   });
 });
+
 describe('POST add sub task', () => {
   it('should add sub task to given path', done => {
     request(app)
@@ -48,6 +52,7 @@ describe('POST add sub task', () => {
       .expect(400, done);
   });
 });
+
 describe('POST update subtask status', () => {
   it('should update status of particular subtask', done => {
     request(app)
@@ -64,6 +69,7 @@ describe('POST update subtask status', () => {
       .expect(400, done);
   });
 });
+
 describe('POST edit title', () => {
   it('should edit title of particular todo', done => {
     request(app)
@@ -80,6 +86,7 @@ describe('POST edit title', () => {
       .expect(400, done);
   });
 });
+
 describe('POST edit subtask title', () => {
   it('should edit title of particular subtask', done => {
     request(app)
@@ -96,6 +103,7 @@ describe('POST edit subtask title', () => {
       .expect(400, done);
   });
 });
+
 describe('GET home page', () => {
   it('should get homepage for /homepage.html path given ', done => {
     request(app)
@@ -107,6 +115,7 @@ describe('GET home page', () => {
       .expect(/<title>TODO APP<\/title>/);
   });
 });
+
 describe('GET other page', () => {
   it('should get other page css path given ', done => {
     request(app)
@@ -117,6 +126,7 @@ describe('GET other page', () => {
       .expect('Content-Type', 'text/css; charset=UTF-8', done);
   });
 });
+
 describe('GET Not found', () => {
   it('should get not found if wrong path given', done => {
     request(app)
@@ -126,6 +136,7 @@ describe('GET Not found', () => {
       .expect(404, done);
   });
 });
+
 describe('PUT Method not allowed', () => {
   it('should return method not allowed', done => {
     request(app)
@@ -135,6 +146,7 @@ describe('PUT Method not allowed', () => {
       .expect(404, done);
   });
 });
+
 describe('GET serveTodoList', () => {
   it('should get todoList /todoList path given ', done => {
     request(app)
@@ -148,6 +160,7 @@ describe('GET serveTodoList', () => {
       );
   });
 });
+
 describe('POST delete subTask', () => {
   it('should delete particular subtask', done => {
     request(app)
@@ -164,6 +177,7 @@ describe('POST delete subTask', () => {
       .expect(400, done);
   });
 });
+
 describe('POST delete todo', () => {
   it('should delete particular todo', done => {
     request(app)
@@ -178,5 +192,55 @@ describe('POST delete todo', () => {
       .set('Cookie', ['session=1'])
       .send({ id: 'todo_1' })
       .expect(400, done);
+  });
+});
+
+describe('GET redirectToIndex', () => {
+  it('should redirect to the home page if the cookie is there in the login page', function(done) {
+    request(app)
+      .get('/home')
+      .set('Cookie', ['session=1'])
+      .expect('location', '/homepage.html')
+      .expect(302, done);
+  });
+  it('should give the index page if the cookie is not there in the login page', function(done) {
+    request(app)
+      .get('/home')
+      .expect('location', '/index.html')
+      .expect(302, done);
+  });
+});
+
+describe('GET redirectToHome', () => {
+  it('should redirect to the home page if the cookie is there from home page', function(done) {
+    request(app)
+      .get('/home')
+      .set('Cookie', ['session=1'])
+      .expect('location', '/homepage.html')
+      .expect(302, done);
+  });
+  it('should give the login page if the cookie not exists in the homepage', function(done) {
+    request(app)
+      .get('/home')
+      .expect('location', '/index.html')
+      .expect(302, done);
+  });
+});
+
+describe('GET logout', () => {
+  it('should logout if user clicks on the logout page', function(done) {
+    request(app)
+      .get('/logout')
+      .expect('location', '/index.html')
+      .expect(302, done);
+  });
+});
+
+describe('POST saveAndProceed', () => {
+  it('should not store the user details if the username already exists', function(done) {
+    request(app)
+      .post('/newUser')
+      .send({ userName: 'a', password: 'a' })
+      .expect(200, done);
   });
 });
