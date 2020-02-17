@@ -8,36 +8,39 @@
   <script src="scripts/signUp.js"></script>
   <script src="scripts/requests.js"></script>
   <link rel="stylesheet" href="css/login.css" />
-  <script src="scripts/login.js"></script>
 </head>
 
 <body>
   <div class="signUp">
-    <label for="userName"> userName <input type="text" name="userName" id="userName" /></label>
+    <label for="userName">
+      userName <input type="text" name="userName" id="userName" /></label>
     <br />
-    <label for="password"> password <input type="password" name="password" id="password" /></label>
+    <label for="password">
+      password <input type="password" name="password" id="password" /></label>
     <br />
-
-    <label for="confirmPassword">confirm password <input type="password" name="confirmPassword"
-        id="confirmPassword" /></label>
+    <label for="confirmPassword">confirm password
+      <input type="password" name="confirmPassword" id="confirmPassword" /></label>
     <br />
     <button onclick="saveAndProceed()">Submit</button>
-    <p>Already have an account? <a href="" onclick="showLogin()">Login here</a></p>
+    <p>
+      Already have an account? <a href="" onclick="showLogin()">Login here</a>
+    </p>
   </div>
-  <div class="status">
-  </div>
+  <div class="status"></div>
   <div id="login">
-    <div class="userInfo">
-      <img src="images/user.png" id="userImg" />
-      <label for="userName">User Name :
-        <input type="text" name="userName" class="userName" placeholder="Your Name" />
-      </label>
-      <label for="password">Password :
-        <input type="password" name="password" class="password" placeholder="password" />
-      </label>
-    </div>
-    <button class="choices" onclick="login()">Login</button>
-    <p>Don't have an account?<a onclick="signUp()" /> create account</a></p>
+    <form action="/home" method="post">
+      <div class="userInfo">
+        <img src="images/user.png" id="userImg" />
+        <label for="userName">User Name :
+          <input type="text" name="userName" class="userName" placeholder="Your Name" />
+        </label>
+        <label for="password">Password :
+          <input type="password" name="password" class="password" placeholder="password" />
+        </label>
+      </div>
+      <button class="choices" type="submit">Login</button>
+      <p>Don't have an account?<a onclick="signUp()"> create account</a></p>
+    </form>
   </div>
 </body>
 
