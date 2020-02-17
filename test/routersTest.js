@@ -15,7 +15,7 @@ describe('POST showHomePage', () => {
     request(app)
       .post('/home')
       .send({ userName: 'a', password: 'a' })
-      .expect(302, done);
+      .expect(200, done);
   });
 });
 
