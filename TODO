@@ -78,8 +78,14 @@ handle =>
 
 
 -----------------------------------
-need to write signup page
-  then should be able to store the user details
-need to write login page
-need to toggle between login and signup pages
-need to change new array to array.from
+--DONE--need to write sign up page
+  --DONE--then should be able to store the user details
+--DONE--need to write login page
+--DONE--need to toggle between login and sign up pages
+
+----------------------------
+--DONE--clear cookie
+user should not access any page if cookie is not there
+if user haven't logged out then when next time user will come then the homepage should be displayed
+give message if any username or password  are incorrect in login page
+on sign up page have to whether user filled all required details or not
