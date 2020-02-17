@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>signUp</title>
+  <title>TODO APP</title>
   <script src="scripts/signUp.js"></script>
   <script src="scripts/requests.js"></script>
   <link rel="stylesheet" href="css/login.css" />
@@ -12,21 +12,19 @@
 
 <body>
   <div class="signUp">
-    <form>
-      <label for="userName">
-        userName <input type="text" name="userName" id="userName" required /></label>
-      <br />
-      <label for="password">
-        password <input type="password" name="password" id="password" required /></label>
-      <br />
-      <label for="confirmPassword">confirm password
-        <input type="password" name="confirmPassword" id="confirmPassword" required /></label>
-      <br />
-      <button onclick="saveAndProceed()">Submit</button>
-      <p>
-        Already have an account? <a href="" onclick="showLogin()">Login here</a>
-      </p>
-    </form>
+    <label for="userName">
+      userName <input type="text" name="userName" id="userName" required /></label>
+    <br />
+    <label for="password">
+      password <input type="password" name="password" id="password" required /></label>
+    <br />
+    <label for="confirmPassword">confirm password
+      <input type="password" name="confirmPassword" id="confirmPassword" required /></label>
+    <br />
+    <button onclick="saveAndProceed()">Submit</button>
+    <p>
+      Already have an account? <a href="" onclick="showLogin()">Login here</a>
+    </p>
   </div>
   <div class="status"></div>
   <div id="login">
