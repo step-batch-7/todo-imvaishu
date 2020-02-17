@@ -7,8 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "mkdir -p test/resource;export DATA_STORE=$(pwd)/test/resource/todo.json; nyc mocha ; rm -rf test/resource",
-    "start": "mkdir -p data ;export DATA_STORE=$(pwd)/data/userList.json; node server.js"
+    "test": "mkdir -p test/resource;export DATA_STORE=$(pwd)/test/resource/userList.json; nyc mocha ; rm -rf test/resource",
+    "start": "mkdir -p data ;export DATA_STORE=$(pwd)/data/userList.json;export session=[]; node server.js"
   },
   "repository": {
     "type": "git",
