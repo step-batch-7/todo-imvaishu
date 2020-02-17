@@ -18,6 +18,7 @@ const saveAndProceed = function(){
     message.innerHTML = `<p>${text} : with this Username ${userName}</p>`;
     message.style.display = 'block';
   });
+  showLogin();
 };
 
 const signUp = function () {
