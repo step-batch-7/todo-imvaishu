@@ -64,7 +64,7 @@ use required instead of if else in todo title
 remaining requirements:
 --DONE--1)search by title
 --DONE--2)search by task
-3)login and sign up page;
+--DONE--3)login and sign up page;
 
 ----------------------------------
 handle =>
@@ -85,7 +85,7 @@ handle =>
 
 ----------------------------
 --DONE--clear cookie
-user should not access any page if cookie is not there
-if user haven't logged out then when next time user will come then the homepage should be displayed
+--DONE--user should not access any page if cookie is not there
+--DONE--if user haven't logged out then when next time user will come then the homepage should be displayed
 give message if any username or password  are incorrect in login page
-on sign up page have to whether user filled all required details or not
+--DONE--on sign up page it should check whether user filled all required details or not
