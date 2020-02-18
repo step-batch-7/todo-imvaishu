@@ -9,11 +9,10 @@ const subTaskHtml = function(task, id){
         id="taskTitle-${task.id}-${id}">${task.taskTitle}</label>
     </div>
     <div>
-      <a onclick="clearTask('clear-${task.id}-${id}')" id="clear-${task.id}"> <img src="images/remove.png" class="remove"/></a>
+      <a onclick="clearTask('clear-${task.id}-${id}')" id="clear-${task.id}"> <i class="fas fa-minus"></i></a>
     </div>
   </div>`;
 };
-
 const updateTitleToHtml = function(todo){
   return `
   <div class="todo" id=${todo.id}>
@@ -23,7 +22,7 @@ const updateTitleToHtml = function(todo){
       </label>
     </div>
     <a onclick="clearTodo('remove-${todo.id}');" id="remove-${todo.id}" > 
-      <img src="images/remove.png" class="remove"/>
+    <i class="fas fa-minus"></i>
     </a>
   </div>
   <div class= "title-box">
@@ -32,30 +31,25 @@ const updateTitleToHtml = function(todo){
       </div>
       <div>
         <button onclick="addSubTask('addTask-${todo.id}');"  >
-        <img src="images/add.png" class="add"/></button>
+        <i class="fas fa-plus"></i></button>
       </div>
     </div>
     `;
 };
-
 class TodoList{
   constructor(todoList){
     this.todoList = todoList;
   }
-  
   static load(content){
     const list = JSON.parse(content);
     return new TodoList(list);
   }
-  
   titleToHtml(){
     const reverseContent = this.todoList.slice().reverse();
     return reverseContent.map(updateTitleToHtml).join('');
   }
-
   tasksToHtml(){
     return this.todoList.map((todo) => 
       '<div class="block-container">' + updateTitleToHtml(todo) + todo.tasks.map(task => subTaskHtml(task, todo.id)).join('') + '</div>'
     ).join('');
   }
-}
