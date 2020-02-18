@@ -6,10 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TODO APP</title>
   <link rel="stylesheet" href="css/todo.css" />
-  <!-- <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    /> -->
   <script src="scripts/signUp.js"></script>
   <script src="scripts/requests.js"></script>
 </head>
@@ -18,11 +14,11 @@
   <div class="accounts">
     <div class="signUp">
       <h1 id="signUp">SIGN UP</h1>
-      <label for="userName">userName :</label>
+      <label for="userName">User Name :</label>
       <input type="text" name="userName" id="userName" autocomplete="off" />
-      <label for=" password">password : </label>
+      <label for=" password">Password : </label>
       <input type="password" name="password" id="password" />
-      <label for="confirmPassword">confirm password :</label>
+      <label for="confirmPassword">Confirm Password :</label>
       <input type="password" name="confirmPassword" id="confirmPassword" />
       <button onclick="saveAndProceed()">Submit</button>
       <p>
@@ -43,7 +39,7 @@
       <button class="choice" type="submit" onclick="login()">Login</button>
       <p>
         Don't have an account?<a onclick="signUp()">
-          <u>create account</u>
+          <u>Create account</u>
         </a>
       </p>
     </div>

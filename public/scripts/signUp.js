@@ -17,7 +17,7 @@ const saveAndProceed = function() {
   const content = JSON.stringify({ userName, password });
   xhrPostRequest('newUser', content, text => {
     const message = document.querySelector('.status');
-    message.innerHTML = `<p>${text} : with this Username ${userName}</p>`;
+    message.innerHTML = `<p>${text} : with this username ${userName}</p>`;
     message.style.display = 'block';
   });
   showLogin();
