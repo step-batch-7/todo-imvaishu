@@ -14,34 +14,29 @@
   <div class="accounts">
     <div class="signUp">
       <h1 id="signUp">SIGN UP</h1>
-      <label for="userName">User Name :</label>
-      <input type="text" name="userName" id="userName" autocomplete="off" />
-      <label for=" password">Password : </label>
-      <input type="password" name="password" id="password" />
-      <label for="confirmPassword">Confirm Password :</label>
-      <input type="password" name="confirmPassword" id="confirmPassword" />
+      <input type="text" name="userName" id="userName" placeholder="User Name" autocomplete="off" />
+      <input type="password" name="password" placeholder="Password" id="password" />
+      <input type="password" name="confirmPassword" placeholder="Confirm Password" id="confirmPassword" />
       <button onclick="saveAndProceed()">Submit</button>
-      <p>
+      <div>
         Already have an account?
         <a onclick="showLogin()"> <u> Login here </u></a>
-      </p>
+      </div>
     </div>
     <div class="status"></div>
     <h5 class="hide">incorrect password or username</h5>
     <div id="login">
       <div class="userInfo">
         <h1 id="signUp">LOGIN</h1>
-        <label for="userName">User Name :</label>
-        <input type="text" name="userName" class="userName" placeholder="Your Name" autocomplete="off" />
-        <label for="password">Password :</label>
-        <input type="password" name="password" class="password" placeholder="password" />
+        <input type="text" name="userName" class="userName" placeholder="Username" autocomplete="off" />
+        <input type="password" name="password" class="password" placeholder="Password" />
       </div>
       <button class="choice" type="submit" onclick="login()">Login</button>
-      <p>
+      <div>
         Don't have an account?<a onclick="signUp()">
           <u>Create account</u>
         </a>
-      </p>
+      </div>
     </div>
   </div>
 </body>
