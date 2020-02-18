@@ -1,5 +1,5 @@
-body{
-  background-color:rgb(235, 235, 235);
+body {
+  background-color: rgb(235, 235, 235);
 }
 
 input,
@@ -9,9 +9,9 @@ label,
   outline: none;
 }
 
-h1{
-    text-align: center;
-    line-height: 0px;
+h1 {
+  text-align: center;
+  line-height: 0px;
 }
 
 span {
@@ -78,7 +78,7 @@ button {
   overflow: scroll;
   margin: 20px;
   border: 1px solid rgb(144, 227, 255);
-  box-shadow: 3px 3px 5px 6px #ccc ;
+  box-shadow: 3px 3px 5px 6px #ccc;
 }
 
 .todo,
@@ -98,7 +98,7 @@ button {
 
 a {
   cursor: pointer;
-  float:right;
+  float: right;
   font-size: large;
 }
 
@@ -117,4 +117,8 @@ a {
 .todo-container {
   display: flex;
   justify-content: space-between;
+}
+
+.title-block {
+  font-weight: 500;
 }
