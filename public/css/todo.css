@@ -91,6 +91,10 @@ input {
   font-size: 20px;
   outline: none;
   padding-left: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-left: 10px;
 }
 
 button {
@@ -135,4 +139,8 @@ button {
   display: none;
   margin-left: 500px;
   color: rgb(106, 238, 255);
+}
+
+#signUp {
+  text-align: center;
 }
