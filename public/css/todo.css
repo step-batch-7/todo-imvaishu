@@ -10,17 +10,39 @@ h5 {
 .hide {
   display: none;
 }
+.option {
+  margin-top: 30px;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid rgb(253, 106, 106);
+  border-top: 5px solid transparent;
+  height: 3px;
+  width: 240px;
+  background-color: rgba(184, 184, 184, 0.8);
+  margin-left: 20px;
+  padding-bottom: 20px;
+  line-height: 20px;
+}
+#info {
+  font-size: 30px;
+}
 .container {
   width: 700px;
 }
 p {
   margin-top: 60px;
+  margin-left: 30px;
+  font-size: 20px;
+  font-weight: 100;
+}
+#userSymbol {
+  margin-left: 100px;
+}
+#creteAccBtn {
+  font-size: 25px;
+  padding-left: 10px;
 }
 #symbol {
   padding-left: 10px;
-}
-#icons{
-  size: 5px;
 }
 .accounts {
   position: fixed;
@@ -46,17 +68,19 @@ p {
   border-radius: 15px;
   padding: 10px;
 }
-p {
-  margin-left: 30px;
-}
 label {
   padding-left: 10px;
+  font-size: larger;
 }
 input {
   margin-bottom: 20px;
   font-size: 20px;
   outline: none;
   padding-left: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-left: 10px;
 }
 button {
   width: 50px;
@@ -68,14 +92,7 @@ button {
   display: flex;
   flex-direction: column;
 }
-#userImg {
-  width: 100px;
-  height: 100px;
-  margin-left: 120px;
-  padding-top: 20px;
-  padding-bottom: 40px;
-  opacity: 0.7;
-}
+
 .signUp {
   width: 350px;
   height: 400px;
@@ -96,4 +113,11 @@ button {
   display: none;
   margin-left: 500px;
   color: rgb(106, 238, 255);
+}
+#signUp {
+  text-align: center;
+}
+input::placeholder {
+  color: #333;
+  font-weight: 200;
 }

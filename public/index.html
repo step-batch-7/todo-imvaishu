@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO APP</title>
-    <link rel="stylesheet" href="css/todo.css" />
-    <!-- <link
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TODO APP</title>
+  <link rel="stylesheet" href="css/todo.css" />
+  <!-- <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     /> -->
-    <script src="scripts/signUp.js"></script>
-    <script src="scripts/requests.js"></script>
-  </head>
+  <script src="scripts/signUp.js"></script>
+  <script src="scripts/requests.js"></script>
+</head>
 
-  <body>
-    <div class="accounts">
-      <div class="signUp">
-        <h3 id="signUp">SIGN UP</h3>
-        <label for="userName">userName :</label>
-        <input type="text" name="userName" id="userName" autocomplete="off" />
-        <label for=" password">password : </label>
-        <input type="password" name="password" id="password" />
-        <label for="confirmPassword">confirm password :</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" />
-        <button onclick="saveAndProceed()">Submit</button>
-        <p>
-          Already have an account?
-          <a onclick="showLogin()"> <u> Login here </u></a>
-        </p>
-      </div>
-      <div class="status"></div>
-      <h5 class="hide">incorrect password or username</h5>
-      <div id="login">
-        <div class="userInfo">
-          <img src="./images/login.png" id="userImg" />
-          <label for="userName">User Name :</label>
-          <input
-            type="text"
-            name="userName"
-            class="userName"
-            placeholder="Your Name"
-            autocomplete="off"
-          />
-          <label for="password">Password :</label>
-          <input
-            type="password"
-            name="password"
-            class="password"
-            placeholder="password"
-          />
-        </div>
-        <button class="choice" type="submit" onclick="login()">Login</button>
-        <p>
-          Don't have an account?<a onclick="signUp()">
-            <u>create account</u>
-          </a>
-        </p>
-      </div>
+<body>
+  <div class="accounts">
+    <div class="signUp">
+      <h3 id="signUp">SIGN UP</h3>
+      <label for="userName">userName :</label>
+      <input type="text" name="userName" id="userName" autocomplete="off" />
+      <label for=" password">password : </label>
+      <input type="password" name="password" id="password" />
+      <label for="confirmPassword">confirm password :</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" />
+      <button onclick="saveAndProceed()">Submit</button>
+      <p>
+        Already have an account?
+        <a onclick="showLogin()"> <u> Login here </u></a>
+      </p>
     </div>
-  </body>
+    <div class="status"></div>
+    <h5 class="hide">incorrect password or username</h5>
+    <div id="login">
+      <div class="userInfo">
+        <h1>LOGIN</h1>
+        <label for="userName">User Name :</label>
+        <input type="text" name="userName" class="userName" placeholder="Your Name" autocomplete="off" />
+        <label for="password">Password :</label>
+        <input type="password" name="password" class="password" placeholder="password" />
+      </div>
+      <button class="choice" type="submit" onclick="login()">Login</button>
+      <p>
+        Don't have an account?<a onclick="signUp()">
+          <u>create account</u>
+        </a>
+      </p>
+    </div>
+  </div>
+</body>
+
 </html>
